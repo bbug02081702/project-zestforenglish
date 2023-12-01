@@ -214,6 +214,12 @@
         border-radius: 12px;
         background-color: var(--bg-primary);
     }
+    .header-banner-button .btn .btn-re:hover{
+        color: var(--bg-primary);
+        border: 1px solid var(--bg-primary);
+        border-radius: 12px;
+        background-color: var(--bg-seconday);
+    }
     .header-banner-button .btn .btn-border{
         color: var(--bg-primary);
         border: 1px solid var(--bg-primary);
@@ -301,6 +307,45 @@
         align-items: center;
         gap: 4px;
     }
+    /* hieu ung fadeinup */
+    @keyframes fadeInUp {
+        from {
+           opacity: 0;
+        }
+
+        to {
+            opacity: 1
+        }
+    }
+
+    @-webkit-keyframes fadeInUp {
+        from {
+           opacity: 0;
+        }
+
+        to {
+            opacity: 1
+        }
+    }
+
+    .animated {
+        animation-duration: 2s;
+        animation-fill-mode: both;
+        -webkit-animation-duration: 5s;
+        -webkit-animation-fill-mode: both
+    }
+
+    .animatedFadeInUp {
+        opacity: 0
+    }
+
+    .fadeInUp {
+        /* opacity: 0; */
+        animation-name: fadeInUp;
+        -webkit-animation-name: fadeInUp;
+    }
+    /* end hieu ung fadeinup */
+
     .header-banner-bottom{
         display: flex;
         gap: 4px;
@@ -458,6 +503,7 @@
         margin-top: 32px;
     }
     .content-metric-export{
+        transition: transform .2s;
         height: auto;
         display: flex;
         background-color: var(--bg-seconday);
@@ -466,6 +512,14 @@
         /* gap: 16px; */
         /* width: 167px; */
     }
+    /* hieu ung zoom */
+    .zoom:hover {
+        -ms-transform: scale(1.10); /* IE 9 */
+        -webkit-transform: scale(1.10); /* Safari 3-8 */
+        transform: scale(1.10); 
+    }
+    /*end hieu ung zoom */
+
     .content-metric-export-top{
         display: flex;
         align-items: center;
@@ -496,6 +550,7 @@
         color: var(--bg-primary) !important;
     }
     .metric-title-in-bottom-text{
+        max-width: 659px;
         font-weight: 400;
         color: #111827;
         font-size: 14px;
@@ -511,6 +566,211 @@
         margin-right: auto;
 
     }
+    .content-metric .metric-image-container{
+        position: relative;
+        margin-top: 20px;
+        display: flex;
+        /* align-items: center; */
+        justify-content: center;
+    }
+    .content-metric .metric-image-container img{
+        width: 376px;
+        height: 376px;
+    }
+    .metric-top-content{
+        justify-content: space-between;
+        display: flex;
+        margin-top: 0px;
+        position: absolute;
+        width: 600px;
+        height: 84px;
+        /* background-color: rebeccapurple; */
+    }
+    .metric-top-content .metric-top-content-btn-left{
+        -webkit-transition: margin 0.5s ease-out;
+        -moz-transition: margin 0.5s ease-out;
+        -o-transition: margin 0.5s ease-out;  /* Float On hover*/
+        margin-top: 28px;
+        position: absolute;
+        display: flex;
+        align-items: center;
+        /* justify-content: center; */
+        gap: 12px;
+        width: 245px;
+        height: 56px;
+        background-color: #fff;
+        border-radius: 56px;
+        border: 1px solid#E5E7EB;
+        padding: 8px 16px;
+        box-shadow: 0px 10px 20px 0px rgba(0, 46, 78, 0.10);
+    }
+    /* hieu ung Float On hover*/
+    .metric-top-content .metric-top-content-btn-left:hover{
+        margin-top: 5px;
+    }
+    /* end hieu ung Float On hover*/
+    .metric-top-content .metric-top-content-btn-left img{
+        width: 28px;
+        height: 28px;
+    }
+    .metric-top-content .metric-top-content-btn-left .metric-top-content-btn-left-ex{
+        font-size: 14px;
+        color: #00074D;
+        font-weight: 400;
+        line-height: 19.6px;
+    }
+    .metric-top-content .metric-top-content-btn-right{
+        -webkit-transition: margin 0.5s ease-out;
+        -moz-transition: margin 0.5s ease-out;
+        -o-transition: margin 0.5s ease-out;  /* Float On hover*/
+        display: flex;
+        position: absolute;
+        right: 0;
+        align-items: center;
+        /* justify-content: center; */
+        gap: 12px;
+        width: 194px;
+        height: 56px;
+        background-color: #fff;
+        border-radius: 56px;
+        border: 1px solid#E5E7EB;
+        padding: 8px 16px;
+        box-shadow: 0px 10px 20px 0px rgba(0, 46, 78, 0.10);
+    }
+     /* hieu ung Float On hover*/
+     .metric-top-content .metric-top-content-btn-right:hover{
+        margin-top: -15px;
+    }
+    .metric-top-content .metric-top-content-btn-right img{
+        width: 28px;
+        height: 28px;
+    }
+    .metric-top-content .metric-top-content-btn-right .metric-top-content-btn-right-ex{
+        font-size: 14px;
+        color: #00074D;
+        font-weight: 400;
+        line-height: 19.6px;
+        align-items: center;
+    }
+    
+    .metric-center-content{
+        justify-content: space-between;
+        display: flex;
+        margin-top: 199px;
+        position: absolute;
+        width: 895px;
+        height: 100px;
+        /* background-color: rebeccapurple; */
+    }
+    .metric-center-content .metric-center-content-btn-left{
+        -webkit-transition: margin 0.5s ease-out;
+        -moz-transition: margin 0.5s ease-out;
+        -o-transition: margin 0.5s ease-out;  /* Float On hover*/
+        position: absolute;
+        margin-top: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        width: 345px;
+        height: 56px;
+        padding: 8px 16px;
+        border-radius: 56px;
+        border: 1px solid #E5E7EB;
+        background:  #FFF;
+        box-shadow: 0px 10px 20px 0px rgba(0, 46, 78, 0.10);
+    }
+    /* hieu ung Float On hover*/
+    .metric-center-content .metric-center-content-btn-left:hover{
+        margin-top: 15px;
+    }
+    .metric-center-content .metric-center-content-btn-left img{
+        width: 28px;
+        height: 28px;
+    }
+    .metric-center-content .metric-center-content-btn-left .metric-center-content-btn-left-ex{
+        font-size: 14px;
+        color: #00074D;
+        font-weight: 400;
+        line-height: 19.6px;
+    }
+    .metric-center-content .metric-center-content-btn-right{
+        -webkit-transition: margin 0.5s ease-out;
+        -moz-transition: margin 0.5s ease-out;
+        -o-transition: margin 0.5s ease-out;  /* Float On hover*/
+        display: flex;
+        position: absolute;
+        top:0;
+        right: 0;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        width: 261px;
+        height: 56px;
+        padding: 8px 16px;
+        border-radius: 56px;
+        border: 1px solid #E5E7EB;
+        background:  #FFF;
+        box-shadow: 0px 10px 20px 0px rgba(0, 46, 78, 0.10);
+    }
+    /* hieu ung Float On hover*/
+    .metric-center-content .metric-center-content-btn-right:hover{
+        margin-top: -15px;
+    }
+    .metric-center-content .metric-center-content-btn-right img{
+        width: 28px;
+        height: 28px;
+    }
+    .metric-center-content .metric-center-content-btn-right-ex{
+        font-size: 14px;
+        color: #00074D;
+        font-weight: 400;
+        line-height: 19.6px;
+    }
+
+    .metric-bottom-content {
+        justify-content: space-between;
+        display: flex;
+        margin-top: 356px;
+        position: absolute;
+        width: 895px;
+        height: 56px;
+        /* background-color: rebeccapurple; */
+    }
+    .metric-bottom-content .metric-bottom-content-btn-right{
+        -webkit-transition: margin 0.5s ease-out;
+        -moz-transition: margin 0.5s ease-out;
+        -o-transition: margin 0.5s ease-out;  /* Float On hover*/
+        position: absolute;
+        top: 0;
+        left: 476px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        width: 230px;
+        height: 56px;
+        padding: 8px 16px;
+        border-radius: 56px;
+        border: 1px solid #E5E7EB;
+        background: #FFF;
+        box-shadow: 0px 10px 20px 0px rgba(0, 46, 78, 0.10);
+    }
+     /* hieu ung Float On hover*/
+    .metric-bottom-content .metric-bottom-content-btn-right:hover{
+        margin-top: -15px;
+    }
+    .metric-bottom-content .metric-bottom-content-btn-right img{
+        width: 28px;
+        height: 28px;
+    }
+    .metric-bottom-content .metric-bottom-content-btn-right .metric-bottom-content-btn-right-ex{
+        font-size: 14px;
+        color: #00074D;
+        font-weight: 400;
+        line-height: 19.6px;
+    }
+
     .metric-content-mobile{
         display: none;
     }
@@ -527,6 +787,7 @@
         margin-top: 20px;
     }
     .content-metric-export-skill{
+        transition: transform .2s;
         display: flex;
         flex-direction: column;
         border-radius: 24px;
@@ -594,7 +855,7 @@
         /* display: flex; */
         align-items: center;
         gap: 20px;
-        margin-top: 32px;
+        margin-top: 16px;
         display: none;
         flex-direction: row;
         -webkit-animation: fadeEffectCourse 1s;
@@ -932,6 +1193,9 @@
             height: auto; */
             display: none;
         }
+        .content-metric .metric-image-container{
+            display: none;
+        }
         .metric-content-mobile{
             align-items: center;
             justify-content: center;
@@ -975,6 +1239,7 @@
             text-align: left;
         }
         .content-metric-container-in-skill{
+            overflow: hidden;
             flex-direction: column;
         }
         .content-metric-skill-title{
@@ -1009,7 +1274,7 @@
         .header-top-metric-btn-mb{
             margin-top: 32px;
             gap: 0px;
-            overflow-x: scroll;
+            overflow: scroll;
         }
         .btn-metric-course-active{
             text-align: center;
@@ -1104,7 +1369,7 @@
     </section>
     <section class="header-banner-bottom-container-bg">
         <div class="header-banner-bottom-bg container">
-            <div class="header-banner-container">
+            <div class="header-banner-container animated animatedFadeInUp fadeInUp">
                 <div class="header-banner-bottom">
                     <span class="text-counter" data-val="06">00</span><span class="text-counter-after"> </span>
                     <span class="icon-counter"><img src="./assets/images/icon-bgo.png" alt="" srcset=""></span>
@@ -1113,7 +1378,7 @@
                     <p class="title-counter">năm nghiên cứu và phát triển</p>
                 </div>
             </div> 
-            <div class="header-banner-container">
+            <div class="header-banner-container animated animatedFadeInUp fadeInUp">
                 <div class="header-banner-bottom">
                     <span class="text-counter" data-val="50">00</span><span class="text-counter-after">+</span>
                     <span class="icon-counter"><img src="./assets/images/icon-bgo.png" alt="" srcset=""></span>
@@ -1122,7 +1387,7 @@
                     <p class="title-counter">Khóa học đã diễn ra</p>
                 </div>
             </div> 
-            <div class="header-banner-container">
+            <div class="header-banner-container animated animatedFadeInUp fadeInUp">
                 <div class="header-banner-bottom">
                     <span class="text-counter" data-val="100">00</span><span class="text-counter-after">%</span>
                     <span class="icon-counter"><img src="./assets/images/icon-bgo.png" alt="" srcset=""></span>
@@ -1136,8 +1401,8 @@
 
     <section class="header-top-metric container">
         <div class="header-top-metric-title container-content">
-            <h2>Z-extra</h2>
-            <b>Trải nghiệm học IELTS tối ưu, toàn diện</b>
+            <h2 class="animated animatedFadeInUp fadeInUp">Z-extra</h2>
+            <b class="animated animatedFadeInUp fadeInUp">Trải nghiệm học IELTS tối ưu, toàn diện</b>
             <p>Z-extra là chuỗi các buổi học bổ trợ với nhiều chủ đề và hình thức đa dạng nhằm tạo một môi trường tư duy và học tập hoàn toàn bằng tiếng Anh, giúp học viên phát triển các kỹ năng IELTS một cách dễ dàng, nhanh chóng và toàn diện</p>
         </div>
         <div class="header-top-metric-btn container">
@@ -1159,33 +1424,33 @@
 
         </div>
         <div id="Foundation" class="content-metric container center tab-active">
-            <h4>Có phải bạn đang gặp những vấn đề sau?</h4>
+            <h4 class="animated animatedFadeInUp fadeInUp">Có phải bạn đang gặp những vấn đề sau?</h4>
             <div class="content-metric-container-in">
-                <div class="content-metric-export">
+                <div class="content-metric-export zoom">
                     <div class="content-metric-export-top">
                         <img src="./assets/images/icon-hello.png" alt="" srcset="">
                         <p>Thiếu <b>vốn từ </b>thông dụng</p>
                     </div>
                 </div>
-                <div class="content-metric-export">
+                <div class="content-metric-export zoom">
                     <div class="content-metric-export-top">
                         <img src="./assets/images/icon-ngu-phap.png" alt="" srcset="">
                         <p>Không có nền tảng <b>ngữ pháp</b></p>
                     </div>
                 </div>
-                <div class="content-metric-export">
+                <div class="content-metric-export zoom">
                     <div class="content-metric-export-top">
                         <img src="./assets/images/icon-listen-en.png" alt="" srcset="">
                         <p>Kỹ năng <b>nghe hiểu</b> yếu</p>
                     </div>
                 </div>
-                <div class="content-metric-export">
+                <div class="content-metric-export zoom">
                     <div class="content-metric-export-top">
                         <img src="./assets/images/icon-kienthuc.png" alt="" srcset="">
                         <p>Khó tiếp thu <b>kiến thức</b></p>
                     </div>
                 </div>
-                <div class="content-metric-export" id="metric-id-mobile">
+                <div class="content-metric-export zoom" id="metric-id-mobile">
                     <div class="content-metric-export-top">
                         <img src="./assets/images/icon-dien-dat-suy-nghi.png" alt="" srcset="">
                         <p>Hoàn toàn không thể <b>diễn đạt suy nghĩ</b></p>
@@ -1199,7 +1464,46 @@
                 tảng để phát triển tư duy tiếng Anh. Học viên sẽ được giảng dạy, 
                 thực hành giao tiếp và trực tiếp sửa sai bởi giáo viên IELTS 8.0+ bởi giáo viên bản xứ
             </p>
-            <img class="metric-image" src="./assets/images/Knowledge.png" alt="" srcset="">
+            <!-- <img class="metric-image" src="./assets/images/Knowledge.png" alt="" srcset=""> -->
+            <div class="metric-image-container">
+                <img src="./assets/images/young-woman-mb.png" alt="">
+                <div class="metric-top-content">
+                    <div class="metric-top-content-btn-left animated animatedFadeInUp fadeInUp">
+                        <img src="./assets/images/icon-content-cmt-mb.png" alt="">
+                        <p class="metric-top-content-btn-left-ex">
+                            Chủ động thực hành giúp tiếp thu nhanh chóng
+                        </p>
+                    </div>
+                    <div class="metric-top-content-btn-right animated animatedFadeInUp fadeInUp">
+                        <img src="./assets/images/icon-content-book-mb.png" alt="">
+                        <p class="metric-top-content-btn-right-ex">
+                            Học ngữ pháp bằng giao tiếp
+                        </p>
+                    </div>
+                </div>
+                <div class="metric-center-content">
+                    <div class="metric-center-content-btn-left animated animatedFadeInUp fadeInUp">
+                        <img src="./assets/images/icon-content-grad-mb.png" alt="">
+                        <p class="metric-center-content-btn-left-ex">
+                            Bổ sung kiến thức văn hoá ngôn ngữ để luyện tư duy trực tiếp bằng tiếng Anh
+                        </p>
+                    </div>
+                    <div class="metric-center-content-btn-right animated animatedFadeInUp fadeInUp">
+                        <img src="./assets/images/icon-content-listen-mb.png" alt="">
+                        <p class="metric-center-content-btn-right-ex">
+                            Luyện phản xạ nghe nói bằng hội thoại thực tế
+                        </p>
+                    </div>
+                </div>
+                <div class="metric-bottom-content">
+                    <div class="metric-bottom-content-btn-right animated animatedFadeInUp fadeInUp">
+                        <img src="./assets/images/icon-content-hello-mb.png" alt="">
+                        <p class="metric-bottom-content-btn-right-ex">
+                            Học từ vựng qua chủ đề gần gũi
+                        </p>
+                    </div>
+                </div>
+            </div>
             <div class="metric-content-mobile">
                 <img class="metric-content-mobile-img" src="./assets/images/young-woman-mb.png" alt="">
                 <div class="metric-content-text-mobile">
@@ -1240,21 +1544,21 @@
             <div class="content-metric-skill">
                 <h4 class="content-metric-skill-title">Skills & Social Hour</h4>
                 <div class="content-metric-container-in-skill">
-                    <div class="content-metric-export-skill">
+                    <div class="content-metric-export-skill zoom">
                         <div class="content-metric-export-top-skill">
                             <img src="./assets/images/icon-open-discussion.png" alt="" srcset="">
                             <h6>Open discussion</h6>
                             <p>Các buổi thảo luận về những chủ đề xoay quanh cuộc sống hàng ngày. Chủ động rèn luyện Speaking và Listening qua tình huống thực tế</p>
                         </div>
                     </div>
-                    <div class="content-metric-export-skill">
+                    <div class="content-metric-export-skill zoom">
                         <div class="content-metric-export-top-skill">
                             <img src="./assets/images/icon-Presentation.png" alt="" srcset="">
                             <h6>Presentation</h6>
                             <p>Luyện tập kỹ năng thuyết trình trước đám đông và khả năng trình bày ý tưởng mạch lạc. Tạo nền tảng tư duy cho Speaking và Writing</p>
                         </div>
                     </div>
-                    <div class="content-metric-export-skill">
+                    <div class="content-metric-export-skill zoom">
                         <div class="content-metric-export-top-skill">
                             <img src="./assets/images/icon-social-hour.png" alt="" srcset="">
                             <h6>Social Hour</h6>
@@ -1268,31 +1572,31 @@
         <div id="Elementary" class="content-metric container center">
             <h4>Elementary</h4>
             <div class="content-metric-container-in">
-                <div class="content-metric-export">
+                <div class="content-metric-export zoom">
                     <div class="content-metric-export-top">
                         <img src="./assets/images/icon-hello.png" alt="" srcset="">
                         <p>Thiếu <b>vốn từ </b>thông dụng</p>
                     </div>
                 </div>
-                <div class="content-metric-export">
+                <div class="content-metric-export zoom">
                     <div class="content-metric-export-top">
                         <img src="./assets/images/icon-ngu-phap.png" alt="" srcset="">
                         <p>Không có nền tảng <b>ngữ pháp</b></p>
                     </div>
                 </div>
-                <div class="content-metric-export">
+                <div class="content-metric-export zoom">
                     <div class="content-metric-export-top">
                         <img src="./assets/images/icon-listen-en.png" alt="" srcset="">
                         <p>Kỹ năng <b>nghe hiểu</b> yếu</p>
                     </div>
                 </div>
-                <div class="content-metric-export">
+                <div class="content-metric-export zoom">
                     <div class="content-metric-export-top">
                         <img src="./assets/images/icon-kienthuc.png" alt="" srcset="">
                         <p>Khó tiếp thu <b>kiến thức</b></p>
                     </div>
                 </div>
-                <div class="content-metric-export">
+                <div class="content-metric-export zoom">
                     <div class="content-metric-export-top">
                         <img src="./assets/images/icon-dien-dat-suy-nghi.png" alt="" srcset="">
                         <p>Hoàn toàn không thể <b>diễn đạt suy nghĩ</b></p>
@@ -1302,7 +1606,46 @@
             <h4 class="metric-title-in">Các lớp bổ trợ Z-extra sẽ giúp bạn</h4>
             <h4 class="metric-title-in-bottom">Knowledge</h4>
             <p class="metric-title-in-bottom-text container-content">Các lớp học bổ trợ kiến thức văn hoá và ngôn ngữ - điều kiện nền tảng để phát triển tư duy tiếng Anh. Học viên sẽ được giảng dạy, thực hành giao tiếp và trực tiếp sửa sai bởi giáo viên IELTS 8.0+ bởi giáo viên bản xứ</p>
-            <img class="metric-image" src="./assets/images/Knowledge.png" alt="" srcset="">
+            <!-- <img class="metric-image" src="./assets/images/Knowledge.png" alt="" srcset=""> -->
+            <div class="metric-image-container">
+                <img src="./assets/images/young-woman-mb.png" alt="">
+                <div class="metric-top-content">
+                    <div class="metric-top-content-btn-left animated animatedFadeInUp fadeInUp">
+                        <img src="./assets/images/icon-content-cmt-mb.png" alt="">
+                        <p class="metric-top-content-btn-left-ex">
+                            Chủ động thực hành giúp tiếp thu nhanh chóng
+                        </p>
+                    </div>
+                    <div class="metric-top-content-btn-right animated animatedFadeInUp fadeInUp">
+                        <img src="./assets/images/icon-content-book-mb.png" alt="">
+                        <p class="metric-top-content-btn-right-ex">
+                            Học ngữ pháp bằng giao tiếp
+                        </p>
+                    </div>
+                </div>
+                <div class="metric-center-content">
+                    <div class="metric-center-content-btn-left animated animatedFadeInUp fadeInUp">
+                        <img src="./assets/images/icon-content-grad-mb.png" alt="">
+                        <p class="metric-center-content-btn-left-ex">
+                            Bổ sung kiến thức văn hoá ngôn ngữ để luyện tư duy trực tiếp bằng tiếng Anh
+                        </p>
+                    </div>
+                    <div class="metric-center-content-btn-right animated animatedFadeInUp fadeInUp">
+                        <img src="./assets/images/icon-content-listen-mb.png" alt="">
+                        <p class="metric-center-content-btn-right-ex">
+                            Luyện phản xạ nghe nói bằng hội thoại thực tế
+                        </p>
+                    </div>
+                </div>
+                <div class="metric-bottom-content">
+                    <div class="metric-bottom-content-btn-right animated animatedFadeInUp fadeInUp">
+                        <img src="./assets/images/icon-content-hello-mb.png" alt="">
+                        <p class="metric-bottom-content-btn-right-ex">
+                            Học từ vựng qua chủ đề gần gũi
+                        </p>
+                    </div>
+                </div>
+            </div>
             <div class="metric-content-mobile">
                 <img class="metric-content-mobile-img" src="./assets/images/young-woman-mb.png" alt="">
                 <div class="metric-content-text-mobile">
@@ -1343,21 +1686,21 @@
             <div class="content-metric-skill">
                 <h4>Skills & Social Hour</h4>
                 <div class="content-metric-container-in-skill">
-                    <div class="content-metric-export-skill">
+                    <div class="content-metric-export-skill zoom">
                         <div class="content-metric-export-top-skill">
                             <img src="./assets/images/icon-open-discussion.png" alt="" srcset="">
                             <h6>Open discussion</h6>
                             <p>Các buổi thảo luận về những chủ đề xoay quanh cuộc sống hàng ngày. Chủ động rèn luyện Speaking và Listening qua tình huống thực tế</p>
                         </div>
                     </div>
-                    <div class="content-metric-export-skill">
+                    <div class="content-metric-export-skill zoom">
                         <div class="content-metric-export-top-skill">
                             <img src="./assets/images/icon-Presentation.png" alt="" srcset="">
                             <h6>Presentation</h6>
                             <p>Luyện tập kỹ năng thuyết trình trước đám đông và khả năng trình bày ý tưởng mạch lạc. Tạo nền tảng tư duy cho Speaking và Writing</p>
                         </div>
                     </div>
-                    <div class="content-metric-export-skill">
+                    <div class="content-metric-export-skill zoom">
                         <div class="content-metric-export-top-skill">
                             <img src="./assets/images/icon-social-hour.png" alt="" srcset="">
                             <h6>Social Hour</h6>
@@ -1371,31 +1714,31 @@
         <div id="Intermediate" class="content-metric container center">
             <h4>Intermediate</h4>
             <div class="content-metric-container-in">
-                <div class="content-metric-export">
+                <div class="content-metric-export zoom">
                     <div class="content-metric-export-top">
                         <img src="./assets/images/icon-hello.png" alt="" srcset="">
                         <p>Thiếu <b>vốn từ </b>thông dụng</p>
                     </div>
                 </div>
-                <div class="content-metric-export">
+                <div class="content-metric-export zoom">
                     <div class="content-metric-export-top">
                         <img src="./assets/images/icon-ngu-phap.png" alt="" srcset="">
                         <p>Không có nền tảng <b>ngữ pháp</b></p>
                     </div>
                 </div>
-                <div class="content-metric-export">
+                <div class="content-metric-export zoom">
                     <div class="content-metric-export-top">
                         <img src="./assets/images/icon-listen-en.png" alt="" srcset="">
                         <p>Kỹ năng <b>nghe hiểu</b> yếu</p>
                     </div>
                 </div>
-                <div class="content-metric-export">
+                <div class="content-metric-export zoom">
                     <div class="content-metric-export-top">
                         <img src="./assets/images/icon-kienthuc.png" alt="" srcset="">
                         <p>Khó tiếp thu <b>kiến thức</b></p>
                     </div>
                 </div>
-                <div class="content-metric-export">
+                <div class="content-metric-export zoom">
                     <div class="content-metric-export-top">
                         <img src="./assets/images/icon-dien-dat-suy-nghi.png" alt="" srcset="">
                         <p>Hoàn toàn không thể <b>diễn đạt suy nghĩ</b></p>
@@ -1405,7 +1748,46 @@
             <h4 class="metric-title-in">Các lớp bổ trợ Z-extra sẽ giúp bạn</h4>
             <h4 class="metric-title-in-bottom">Knowledge</h4>
             <p class="metric-title-in-bottom-text container-content">Các lớp học bổ trợ kiến thức văn hoá và ngôn ngữ - điều kiện nền tảng để phát triển tư duy tiếng Anh. Học viên sẽ được giảng dạy, thực hành giao tiếp và trực tiếp sửa sai bởi giáo viên IELTS 8.0+ bởi giáo viên bản xứ</p>
-            <img class="metric-image" src="./assets/images/Knowledge.png" alt="" srcset="">
+            <!-- <img class="metric-image" src="./assets/images/Knowledge.png" alt="" srcset=""> -->
+            <div class="metric-image-container">
+                <img src="./assets/images/young-woman-mb.png" alt="">
+                <div class="metric-top-content">
+                    <div class="metric-top-content-btn-left animated animatedFadeInUp fadeInUp">
+                        <img src="./assets/images/icon-content-cmt-mb.png" alt="">
+                        <p class="metric-top-content-btn-left-ex">
+                            Chủ động thực hành giúp tiếp thu nhanh chóng
+                        </p>
+                    </div>
+                    <div class="metric-top-content-btn-right animated animatedFadeInUp fadeInUp">
+                        <img src="./assets/images/icon-content-book-mb.png" alt="">
+                        <p class="metric-top-content-btn-right-ex">
+                            Học ngữ pháp bằng giao tiếp
+                        </p>
+                    </div>
+                </div>
+                <div class="metric-center-content">
+                    <div class="metric-center-content-btn-left animated animatedFadeInUp fadeInUp">
+                        <img src="./assets/images/icon-content-grad-mb.png" alt="">
+                        <p class="metric-center-content-btn-left-ex">
+                            Bổ sung kiến thức văn hoá ngôn ngữ để luyện tư duy trực tiếp bằng tiếng Anh
+                        </p>
+                    </div>
+                    <div class="metric-center-content-btn-right animated animatedFadeInUp fadeInUp">
+                        <img src="./assets/images/icon-content-listen-mb.png" alt="">
+                        <p class="metric-center-content-btn-right-ex">
+                            Luyện phản xạ nghe nói bằng hội thoại thực tế
+                        </p>
+                    </div>
+                </div>
+                <div class="metric-bottom-content">
+                    <div class="metric-bottom-content-btn-right animated animatedFadeInUp fadeInUp">
+                        <img src="./assets/images/icon-content-hello-mb.png" alt="">
+                        <p class="metric-bottom-content-btn-right-ex">
+                            Học từ vựng qua chủ đề gần gũi
+                        </p>
+                    </div>
+                </div>
+            </div>
             <div class="metric-content-mobile">
                 <img class="metric-content-mobile-img" src="./assets/images/young-woman-mb.png" alt="">
                 <div class="metric-content-text-mobile">
@@ -1446,21 +1828,21 @@
             <div class="content-metric-skill">
                 <h4>Skills & Social Hour</h4>
                 <div class="content-metric-container-in-skill">
-                    <div class="content-metric-export-skill">
+                    <div class="content-metric-export-skill zoom">
                         <div class="content-metric-export-top-skill">
                             <img src="./assets/images/icon-open-discussion.png" alt="" srcset="">
                             <h6>Open discussion</h6>
                             <p>Các buổi thảo luận về những chủ đề xoay quanh cuộc sống hàng ngày. Chủ động rèn luyện Speaking và Listening qua tình huống thực tế</p>
                         </div>
                     </div>
-                    <div class="content-metric-export-skill">
+                    <div class="content-metric-export-skill zoom">
                         <div class="content-metric-export-top-skill">
                             <img src="./assets/images/icon-Presentation.png" alt="" srcset="">
                             <h6>Presentation</h6>
                             <p>Luyện tập kỹ năng thuyết trình trước đám đông và khả năng trình bày ý tưởng mạch lạc. Tạo nền tảng tư duy cho Speaking và Writing</p>
                         </div>
                     </div>
-                    <div class="content-metric-export-skill">
+                    <div class="content-metric-export-skill zoom">
                         <div class="content-metric-export-top-skill">
                             <img src="./assets/images/icon-social-hour.png" alt="" srcset="">
                             <h6>Social Hour</h6>
@@ -1750,7 +2132,7 @@ let valueDisplays = document.querySelectorAll(".text-counter");
 let interval = 1000;
 
 function checkVisibility() {
-    let bannerBottom = document.querySelector(".header-banner-bottom-container-bg");
+    let bannerBottom = document.querySelector(".header-banner-container");
     let rect = bannerBottom.getBoundingClientRect();
 
     // Nếu phần tử xuất hiện trong tầm nhìn, kích hoạt đếm số
