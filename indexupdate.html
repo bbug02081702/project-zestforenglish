@@ -514,6 +514,7 @@
     }
     /* hieu ung zoom */
     .zoom:hover {
+        cursor: pointer;
         -ms-transform: scale(1.10); /* IE 9 */
         -webkit-transform: scale(1.10); /* Safari 3-8 */
         transform: scale(1.10); 
@@ -625,7 +626,7 @@
         -o-transition: margin 0.5s ease-out;  /* Float On hover*/
         display: flex;
         position: absolute;
-        right: 0;
+        right: 30px;
         align-items: center;
         /* justify-content: center; */
         gap: 12px;
@@ -701,7 +702,7 @@
         display: flex;
         position: absolute;
         top:0;
-        right: 0;
+        right: 30px;
         align-items: center;
         justify-content: center;
         gap: 12px;
@@ -972,13 +973,21 @@
         display: grid;
     }
     .teacher-row-content{
+        overflow: hidden;
         background-color: var(--bg-seconday);
         padding: 16px;
         border-radius: 24px;
     }
-    .teacher-row-content .image-thumbnail{
+    .teacher-row-content .image-thumbnail-container .image-thumbnail{
         width: 100%;
         height: auto;
+        transform-origin: 50% 65%;
+        transition: transform 5s, filter 3s ease-in-out;
+        filter: brightness(100%);
+    }
+    .teacher-row-content .image-thumbnail-container .image-thumbnail:hover{
+        filter: brightness(100%);
+        transform: scale(1.5);
     }
     .teacher-row-content h4{
         margin-top: 8px;
@@ -1252,6 +1261,9 @@
             padding: 48px 16px;
             background-color: var(--bg-seconday);
         }
+        .course-content {
+            margin-top: 16px !important;
+        }
         .course-title h3{
             font-size: 24px;
         }
@@ -1272,6 +1284,7 @@
             width: 100%;
         }
         .header-top-metric-btn-mb{
+            width: 100%;
             margin-top: 32px;
             gap: 0px;
             overflow: scroll;
@@ -2005,7 +2018,9 @@
         </div>
         <div class="teacher-row container">
             <div class="teacher-row-content">
-                <img class="image-thumbnail" src="./assets/images/teacher.png" alt="">
+                <div style="overflow: hidden;" class="image-thumbnail-container">
+                    <img class="image-thumbnail" src="./assets/images/teacher.png" alt="">
+                </div>
                 <h4>Trần Thành Phong</h4>
                 <div class="teacher-row-content-detail">
                     <img src="./assets/images/icon-teacher-cup.png" alt="">
@@ -2025,7 +2040,9 @@
                 </div>
             </div>
             <div class="teacher-row-content">
-                <img class="image-thumbnail" src="./assets/images/teacher.png" alt="">
+                <div style="overflow: hidden;" class="image-thumbnail-container">
+                    <img class="image-thumbnail" src="./assets/images/teacher.png" alt="">
+                </div>
                 <h4>Trần Thành Phong</h4>
                 <div class="teacher-row-content-detail">
                     <img src="./assets/images/icon-teacher-cup.png" alt="">
@@ -2045,7 +2062,9 @@
                 </div>
             </div>
             <div class="teacher-row-content">
-                <img class="image-thumbnail" src="./assets/images/teacher.png" alt="">
+                <div style="overflow: hidden;" class="image-thumbnail-container">
+                    <img class="image-thumbnail" src="./assets/images/teacher.png" alt="">
+                </div>
                 <h4>Trần Thành Phong</h4>
                 <div class="teacher-row-content-detail">
                     <img src="./assets/images/icon-teacher-cup.png" alt="">
@@ -2066,7 +2085,9 @@
             </div>
 
             <div class="teacher-row-content">
-                <img class="image-thumbnail" src="./assets/images/teacher.png" alt="">
+                <div style="overflow: hidden;" class="image-thumbnail-container">
+                    <img class="image-thumbnail" src="./assets/images/teacher.png" alt="">
+                </div>
                 <h4>Trần Thành Phong</h4>
                 <div class="teacher-row-content-detail">
                     <img src="./assets/images/icon-teacher-cup.png" alt="">
@@ -2252,45 +2273,67 @@ function openTabCourse(evt, courseName) {
 //         elements.forEach(element => element.style.transform = "translate(0px, 0px)");
 //     });
 // });
+
 const elements = document.querySelectorAll('.icon3d');
+
+// Theo dõi trạng thái di chuyển chuột
 let isMouseMoving = false;
-let isUpdatingPosition = false;
+
+// Lưu thông tin về sự kiện chuột cuối cùng
 let lastMouseEvent;
 
-function moveElements() {
-    if (isMouseMoving && lastMouseEvent && !isUpdatingPosition) {
-        isUpdatingPosition = true;
+// Lưu thời điểm cuối khi di chuyển chuột
+let lastMouseMoveTime = Date.now();
 
+
+function moveElements() {
+    if (isMouseMoving && lastMouseEvent) {
+        // Nếu chuột đang di chuyển và đã có sự kiện di chuyển chuột trước đó
         elements.forEach(element => {
             let box = element.getBoundingClientRect();
             let calcX = (lastMouseEvent.clientX - box.x - (box.width / 2)) / 10;
             let calcY = (lastMouseEvent.clientY - box.y - (box.height / 2)) / 10;
-            element.style.transform = `translate(${calcX}px, ${calcY}px)`;
-        });
 
-        setTimeout(() => {
-            isUpdatingPosition = false;
-        }, 100);
-    } else if (!isMouseMoving && !isUpdatingPosition) {
-        // Nếu không di chuyển chuột và không có cập nhật vị trí, thực hiện di chuyển cố định
-        elements.forEach(element => {
-            calcX = Math.random() * 4 - 2;
-            calcY = Math.random() * 4 - 1;
-            element.style.transform = `translate(${calcX}px, ${calcY}px)`;
+            // Thiết lập hiệu ứng chuyển động cho phần tử và áp dụng 'translate3d' để di chuyển mượt mà
+            element.style.transition = 'transform 0.3s ease-out';
+            element.style.transform = `translate3d(${calcX}px, ${calcY}px, 0)`;
         });
+    } else if (!isMouseMoving) {
+        // Nếu không di chuyển chuột
+        const currentTime = Date.now();
+        const elapsedTime = currentTime - lastMouseMoveTime;
+
+        if (elapsedTime > 5000) {
+            // Lớn hơn 5s thì cho icon về vị trí gốc
+            elements.forEach(element => {
+                element.style.transition = 'transform 0.3s ease-out';
+                element.style.transform = 'translate3d(0, 0, 0)';
+            });
+        }
     }
+
+    // Gọi lại hàm 'moveElements' để chuyển động mượt mà cho chuột và icon 
+    requestAnimationFrame(moveElements);
 }
 
-setInterval(moveElements, 100);
-
+// Lắng nghe sự kiện di chuyển chuột
 document.addEventListener('mousemove', (event) => {
+    // Đặt 'isMouseMoving' là 'true'
     isMouseMoving = true;
+
+    // Lưu sự kiện chuột cuối cùng v
     lastMouseEvent = event;
 
-    // setTimeout(() => {
-    //     isMouseMoving = false;
-    // }, 100);
+    // Cập nhật thời gian chuột chuyển động cuối cùng
+    lastMouseMoveTime = Date.now();
+
+    // Sau 50ms thì tạo giả chuột
+    setTimeout(() => {
+        isMouseMoving = false;
+    }, 50);
 });
+
+moveElements();
 
 
 
