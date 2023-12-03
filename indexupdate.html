@@ -347,6 +347,20 @@
         font-weight: var(--fw-700);
         font-size: 36px;
     }
+    .header-banner-bottom-end .title-counter{
+        text-align: center;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 24px;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    }
+    .header-banner-bottom-end .title-counter.fade-in-up {
+      transition-delay: 0.3s;
+      opacity: 1;
+      transform: translateY(0); /* Di chuyển về vị trí ban đầu (không di chuyển) */
+    }
 
 /* end header-banner */
 
@@ -479,8 +493,7 @@
         border-radius: 24px;
         display: none;
         flex-direction: column;
-        -webkit-animation: fadeEffect 1s;
-        animation: fadeEffect 1s;
+        overflow: hidden;
     }
     /* Fade in tabs */
     @-webkit-keyframes fadeEffect {
@@ -819,12 +832,24 @@
     .metric-content-mobile{
         display: none;
     }
-    .content-metric-skill h4{
+    .content-metric-skill{
+        
+    }
+    .content-metric-skill .content-metric-skill-title{
+        opacity: 1;
         font-size: 24px;
         color: var(--bg-primary);
         text-align: center;
         margin-top: 56px;
         font-weight: var(--fw-700);
+        opacity: 0;
+        transform: translateX(-40px);
+        transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    }
+    .content-metric-skill .content-metric-skill-title.fade-in-right {
+      transition-delay: 0.5s;
+      opacity: 1;
+      transform: translateX(0); /* Di chuyển về vị trí ban đầu (không di chuyển) */
     }
     .content-metric-container-in-skill{
         display: flex;
@@ -1299,6 +1324,14 @@
             justify-content: center;
             display: flex;
             flex-direction: column;
+            opacity: 0;
+            transform: translateX(-40px);
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+        }
+        .metric-content-mobile.fade-in-right {
+            transition-delay: 0.8s;
+            opacity: 1;
+            transform: translateX(0); /* Di chuyển về vị trí ban đầu (không di chuyển) */
         }
         .metric-content-mobile .metric-content-mobile-img{
             width: 100%;
@@ -1340,7 +1373,8 @@
             overflow: hidden;
             flex-direction: column;
         }
-        .content-metric-skill-title{
+        .content-metric-skill .content-metric-skill-title{
+            margin-top: 20px;
             font-size: 20px;
         }
 
@@ -1477,7 +1511,7 @@
                     <span class="icon-counter"><img src="./assets/images/icon-bgo.png" alt="" srcset=""></span>
                 </div>
                 <div class="header-banner-bottom-end">
-                    <p class="title-counter">năm nghiên cứu và phát triển</p>
+                    <p class="title-counter fade-all">năm nghiên cứu và phát triển</p>
                 </div>
             </div> 
             <div class="header-banner-container">
@@ -1486,7 +1520,7 @@
                     <span class="icon-counter"><img src="./assets/images/icon-bgo.png" alt="" srcset=""></span>
                 </div>
                 <div class="header-banner-bottom-end">
-                    <p class="title-counter">Khóa học đã diễn ra</p>
+                    <p class="title-counter fade-all">Khóa học đã diễn ra</p>
                 </div>
             </div> 
             <div class="header-banner-container">
@@ -1495,7 +1529,7 @@
                     <span class="icon-counter"><img src="./assets/images/icon-bgo.png" alt="" srcset=""></span>
                 </div>
                 <div class="header-banner-bottom-end">
-                    <p class="title-counter">học viên đạt mục tiêu</p>
+                    <p class="title-counter fade-all">học viên đạt mục tiêu</p>
                 </div>
             </div> 
         </div>
@@ -1606,7 +1640,7 @@
                     </div>
                 </div>
             </div>
-            <div class="metric-content-mobile">
+            <div class="metric-content-mobile fade-all">
                 <img class="metric-content-mobile-img" src="./assets/images/young-woman-mb.png" alt="">
                 <div class="metric-content-text-mobile">
                     <img src="./assets/images/icon-content-book-mb.png" alt="">
@@ -1644,7 +1678,7 @@
                 </div>
             </div>
             <div class="content-metric-skill">
-                <h4 class="content-metric-skill-title">Skills & Social Hour</h4>
+                <h5 class="content-metric-skill-title fade-all">Skills & Social Hour</h5>
                 <div class="content-metric-container-in-skill">
                     <div class="content-metric-export-skill fade-all zoom">
                         <div class="content-metric-export-top-skill">
@@ -1786,7 +1820,7 @@
                 </div>
             </div>
             <div class="content-metric-skill">
-                <h4>Skills & Social Hour</h4>
+                <h5 class="content-metric-skill-title fade-all">Skills & Social Hour</h5>
                 <div class="content-metric-container-in-skill">
                     <div class="content-metric-export-skill fade-all zoom">
                         <div class="content-metric-export-top-skill">
@@ -1928,7 +1962,7 @@
                 </div>
             </div>
             <div class="content-metric-skill">
-                <h4>Skills & Social Hour</h4>
+                <h5 class="content-metric-skill-title fade-all">Skills & Social Hour</h5>
                 <div class="content-metric-container-in-skill">
                     <div class="content-metric-export-skill fade-all zoom">
                         <div class="content-metric-export-top-skill">
