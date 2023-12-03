@@ -43,6 +43,7 @@
       background-position: center center; /* Căn giữa theo chiều ngang và chiều dọc */
       background-size: cover; /* Hiển thị toàn bộ background-image và căn giữa */
     }
+
     .container-header-mobile{
         display: none;
     }
@@ -162,6 +163,13 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        opacity: 0;
+        transform: translateY(0px);
+        transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    }
+    .header-banner-title.fade-in-up {
+      opacity: 1;
+      transform: translateY(0);
     }
     .header-banner-title h1{
        font-weight: var(--fw-700);
@@ -248,31 +256,47 @@
         position: absolute;
         top: -150px;
         transform-origin: 50% 50%;
-        animation: waveAnimation 25s cubic-bezier(.55, .5, .45, .5) infinite;
+        -webkit-transition: transform 0.2s ease-out;
+        -moz-transition: transform 0.2s ease-out;
+        -o-transition: transform 0.2s ease-out;  
+        stroke-dasharray: 4 4;
+        stroke-dashoffset: 0;
+        stroke: #FEC200;
+        animation: waveAnimation 2s cubic-bezier(.55, .5, .45, .5) infinite;
     }
     .header-banner-center .wawe-center{
         top: 0px;
         position: relative;
         transform-origin: 50% 50%;
-        animation: waveAnimation 25s cubic-bezier(.55, .5, .45, .5) infinite;
+        -moz-transition: transform 0.2s ease-out;
+        -o-transition: transform 0.2s ease-out; 
+        stroke-dasharray: 4 4; 
+        stroke-dashoffset: 0;
+        stroke: #052FFF;
+        animation: waveAnimation 2s cubic-bezier(.55, .5, .45, .5) infinite;
     }
     .header-banner-center .wawe-bottom{
         /* transform: rotateY(17.7deg); */
         top: -60px;
         position: relative;
         transform-origin: 50% 50%;
-        animation: waveAnimation 25s cubic-bezier(.55, .5, .45, .5) infinite;   
+        -webkit-transition: transform 0.2s ease-out;
+        -moz-transition: transform 0.2s ease-out;
+        -o-transition: transform 0.2s ease-out; 
+        stroke-dasharray: 4 4;
+        stroke-dashoffset: 0;
+        stroke: #052FFF;
+        animation: waveAnimation 2s cubic-bezier(.55, .5, .45, .5) infinite;
     } 
     @keyframes waveAnimation {
-        
-        0% {
-        transform: translate3d(-90px, 0, 0);
-        }
-
-        100% {
-            transform: translate3d(85px, 0, 0);
-        }
-    } 
+            0% {
+                stroke-dashoffset: 0;
+            }
+            100% {
+                stroke-dashoffset: 200;
+            }
+    }
+   
     .header-banner-center .img-header-banner-center{
         position: absolute;
         top: 204px;
@@ -308,42 +332,7 @@
         gap: 4px;
     }
     /* hieu ung fadeinup */
-    @keyframes fadeInUp {
-        from {
-           opacity: 0;
-        }
-
-        to {
-            opacity: 1
-        }
-    }
-
-    @-webkit-keyframes fadeInUp {
-        from {
-           opacity: 0;
-        }
-
-        to {
-            opacity: 1
-        }
-    }
-
-    .animated {
-        animation-duration: 2s;
-        animation-fill-mode: both;
-        -webkit-animation-duration: 5s;
-        -webkit-animation-fill-mode: both
-    }
-
-    .animatedFadeInUp {
-        opacity: 0
-    }
-
-    .fadeInUp {
-        /* opacity: 0; */
-        animation-name: fadeInUp;
-        -webkit-animation-name: fadeInUp;
-    }
+    
     /* end hieu ung fadeinup */
 
     .header-banner-bottom{
@@ -367,6 +356,9 @@
         padding-bottom: 48px;
         /* background-color: var(--bg-seconday); */
         width: 100%;
+        opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
     }
     .header-top-metric-title{
         padding-top: 96px;
@@ -375,6 +367,12 @@
         align-items: center;
         justify-content: center;
     }
+    .header-top-metric.fade-in-up {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: 0.7s;
+    }
+    
     .header-top-metric-title h2{
         font-size: 64px;
         font-weight: var(--fw-700);
@@ -399,6 +397,14 @@
         align-items: center;
         justify-content: center;
         gap: 16px;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    }
+    .header-top-metric-btn.fade-in-up {
+      transition-delay: 0.7s;
+      opacity: 1;
+      transform: translateY(0); /* Di chuyển về vị trí ban đầu (không di chuyển) */
     }
     .btn-metric{
         cursor: pointer;
@@ -491,6 +497,14 @@
         color: var(--txt-color-h);
         font-size: 24px;
         font-weight: var(--fw-700);
+        opacity: 0;
+        transform: translateX(-40px);
+        transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    }
+    .content-metric h4.fade-in-right {
+      transition-delay: 0.5s;
+      opacity: 1;
+      transform: translateX(0); /* Di chuyển về vị trí ban đầu (không di chuyển) */
     }
     .metric-title-in-color{
         color: var(--bg-primary);
@@ -509,17 +523,31 @@
         background-color: var(--bg-seconday);
         border-radius: 24px;
         padding: 16px;
+        opacity: 0;
+        transform: translateX(-40px);
+        transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
         /* gap: 16px; */
         /* width: 167px; */
+
     }
-    /* hieu ung zoom */
-    .zoom:hover {
+      /* hieu ung */
+      .zoom:hover {
         cursor: pointer;
         -ms-transform: scale(1.10); /* IE 9 */
         -webkit-transform: scale(1.10); /* Safari 3-8 */
         transform: scale(1.10); 
     }
+    /* .content-metric-export:hover .zoom {
+    -ms-transform: scale(1.10);
+    -webkit-transform: scale(1.10);
+    transform: scale(1.10);
+} */
     /*end hieu ung zoom */
+    .content-metric-export.fade-in-right {
+      transition-delay: 0.5s;
+      opacity: 1;
+      transform: translateX(0); /* Di chuyển về vị trí ban đầu (không di chuyển) */
+    }
 
     .content-metric-export-top{
         display: flex;
@@ -557,6 +585,14 @@
         font-size: 14px;
         text-align: center;
         margin-top: 8px;
+        opacity: 0;
+        transform: translateX(-40px);
+        transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    }
+    .metric-title-in-bottom-text.fade-in-right {
+        transition-delay: 0.5s;
+        opacity: 1;
+        transform: translateX(0); /* Di chuyển về vị trí ban đầu (không di chuyển) */
     }
     .content-metric .metric-image{
         max-width: 895px;
@@ -573,6 +609,14 @@
         display: flex;
         /* align-items: center; */
         justify-content: center;
+        opacity: 0;
+        transform: translateX(-40px);
+        transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    }
+    .metric-image-container.fade-in-right {
+      transition-delay: 0.5s;
+      opacity: 1;
+      transform: translateX(0); /* Di chuyển về vị trí ban đầu (không di chuyển) */
     }
     .content-metric .metric-image-container img{
         width: 376px;
@@ -794,6 +838,14 @@
         border-radius: 24px;
         padding: 24px;
         border: 1px solid #E5E7EB;
+        opacity: 0;
+        transform: translateX(-40px);
+        transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    }
+    .content-metric-export-skill.fade-in-right {
+      transition-delay: 0.5s;
+      opacity: 1;
+      transform: translateX(0); /* Di chuyển về vị trí ban đầu (không di chuyển) */
     }
     .content-metric-export-top-skill{
         display: flex;
@@ -833,6 +885,14 @@
         font-weight: var(--fw-700);
         color: var(--txt-color-h);
         text-align: center;
+        opacity: 0;
+        transform: translateX(-80px);
+        transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    }
+    .course-title h3.fade-in-right {
+      transition-delay: 0.7s;
+      opacity: 1;
+      transform: translateX(0); /* Di chuyển về vị trí ban đầu (không di chuyển) */
     }
     .course-title span{
         font-size: 36px;
@@ -847,6 +907,14 @@
         justify-content: center;
         width: 100%;
         /* overflow-x: scroll; */
+        opacity: 0;
+        transform: translateY(40px);
+        transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    }
+    .header-top-metric-btn-mb.fade-in-up {
+      transition-delay: 0.7s;
+      opacity: 1;
+      transform: translateY(0); /* Di chuyển về vị trí ban đầu (không di chuyển) */
     }
 
     .course-content{
@@ -859,8 +927,14 @@
         margin-top: 16px;
         display: none;
         flex-direction: row;
-        -webkit-animation: fadeEffectCourse 1s;
-        animation: fadeEffect 1s;
+        opacity: 0;
+        transform: translateX(80px);
+        transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    }
+    .course-content.fade-in-right {
+      transition-delay: 0.8s;
+      opacity: 1;
+      transform: translateX(0);
     }
     .course-content.tab-active-course{
         display: flex;
@@ -957,6 +1031,14 @@
         line-height: 45px;
         color: var(--txt-color-h);
         text-align: center;
+        opacity: 0;
+      transform: translateX(-80px);
+      transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    }
+    .teacher .teacher-title h3.fade-in-right {
+      opacity: 1;
+      transform: translateX(0);
+      transition-delay: 0.2s;
     }
      .teacher .teacher-title span{
         font-size: 36px;
@@ -977,6 +1059,13 @@
         background-color: var(--bg-seconday);
         padding: 16px;
         border-radius: 24px;
+        opacity: 0;
+      transform: translateX(-80px);
+      transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    }
+    .teacher-row-content.fade-in-right {
+      opacity: 1;
+      transform: translateX(0);
     }
     .teacher-row-content .image-thumbnail-container .image-thumbnail{
         width: 100%;
@@ -1350,7 +1439,7 @@
                     <img class="imgtrb" src="./assets/images/icon-bottom-right.png" alt="">
                 </div>
                 
-                <div class="header-banner-title">
+                <div class="header-banner-title fade-all">
                     <h1>Chinh Phục IELTS Bằng</h1>
                     <h2></h2>
                     <p>Với phương châm “Học thật, 
@@ -1382,7 +1471,7 @@
     </section>
     <section class="header-banner-bottom-container-bg">
         <div class="header-banner-bottom-bg container">
-            <div class="header-banner-container animated animatedFadeInUp fadeInUp">
+            <div class="header-banner-container">
                 <div class="header-banner-bottom">
                     <span class="text-counter" data-val="06">00</span><span class="text-counter-after"> </span>
                     <span class="icon-counter"><img src="./assets/images/icon-bgo.png" alt="" srcset=""></span>
@@ -1391,7 +1480,7 @@
                     <p class="title-counter">năm nghiên cứu và phát triển</p>
                 </div>
             </div> 
-            <div class="header-banner-container animated animatedFadeInUp fadeInUp">
+            <div class="header-banner-container">
                 <div class="header-banner-bottom">
                     <span class="text-counter" data-val="50">00</span><span class="text-counter-after">+</span>
                     <span class="icon-counter"><img src="./assets/images/icon-bgo.png" alt="" srcset=""></span>
@@ -1400,7 +1489,7 @@
                     <p class="title-counter">Khóa học đã diễn ra</p>
                 </div>
             </div> 
-            <div class="header-banner-container animated animatedFadeInUp fadeInUp">
+            <div class="header-banner-container">
                 <div class="header-banner-bottom">
                     <span class="text-counter" data-val="100">00</span><span class="text-counter-after">%</span>
                     <span class="icon-counter"><img src="./assets/images/icon-bgo.png" alt="" srcset=""></span>
@@ -1412,13 +1501,13 @@
         </div>
     </section>
 
-    <section class="header-top-metric container">
+    <section class="header-top-metric container fade-all">
         <div class="header-top-metric-title container-content">
-            <h2 class="animated animatedFadeInUp fadeInUp">Z-extra</h2>
-            <b class="animated animatedFadeInUp fadeInUp">Trải nghiệm học IELTS tối ưu, toàn diện</b>
+            <h2 class="">Z-extra</h2>
+            <b class="">Trải nghiệm học IELTS tối ưu, toàn diện</b>
             <p>Z-extra là chuỗi các buổi học bổ trợ với nhiều chủ đề và hình thức đa dạng nhằm tạo một môi trường tư duy và học tập hoàn toàn bằng tiếng Anh, giúp học viên phát triển các kỹ năng IELTS một cách dễ dàng, nhanh chóng và toàn diện</p>
         </div>
-        <div class="header-top-metric-btn container">
+        <div class="header-top-metric-btn container fade-all">
             <div class="btn-metric tab-active" onclick="openTab(event, 'Foundation')">
                 <div class="btn-metric-active">
                     Foundation
@@ -1437,57 +1526,57 @@
 
         </div>
         <div id="Foundation" class="content-metric container center tab-active">
-            <h4 class="animated animatedFadeInUp fadeInUp">Có phải bạn đang gặp những vấn đề sau?</h4>
+            <h4 class="fade-all">Có phải bạn đang gặp những vấn đề sau?</h4>
             <div class="content-metric-container-in">
-                <div class="content-metric-export zoom">
+                <div class="content-metric-export fade-all zoom">
                     <div class="content-metric-export-top">
                         <img src="./assets/images/icon-hello.png" alt="" srcset="">
                         <p>Thiếu <b>vốn từ </b>thông dụng</p>
                     </div>
                 </div>
-                <div class="content-metric-export zoom">
+                <div class="content-metric-export fade-all zoom">
                     <div class="content-metric-export-top">
                         <img src="./assets/images/icon-ngu-phap.png" alt="" srcset="">
                         <p>Không có nền tảng <b>ngữ pháp</b></p>
                     </div>
                 </div>
-                <div class="content-metric-export zoom">
+                <div class="content-metric-export fade-all zoom">
                     <div class="content-metric-export-top">
                         <img src="./assets/images/icon-listen-en.png" alt="" srcset="">
                         <p>Kỹ năng <b>nghe hiểu</b> yếu</p>
                     </div>
                 </div>
-                <div class="content-metric-export zoom">
+                <div class="content-metric-export fade-all zoom">
                     <div class="content-metric-export-top">
                         <img src="./assets/images/icon-kienthuc.png" alt="" srcset="">
                         <p>Khó tiếp thu <b>kiến thức</b></p>
                     </div>
                 </div>
-                <div class="content-metric-export zoom" id="metric-id-mobile">
+                <div class="content-metric-export fade-all zoom" id="metric-id-mobile">
                     <div class="content-metric-export-top">
                         <img src="./assets/images/icon-dien-dat-suy-nghi.png" alt="" srcset="">
                         <p>Hoàn toàn không thể <b>diễn đạt suy nghĩ</b></p>
                     </div>
                 </div>
             </div>
-            <h4 class="metric-title-in">Các lớp bổ trợ <b class="metric-title-in-color">Z-extra</b> sẽ giúp bạn</h4>
-            <h4 class="metric-title-in-bottom">Knowledge</h4>
-            <p class="metric-title-in-bottom-text container-content">
+            <h4 class="metric-title-in fade-all">Các lớp bổ trợ <b class="metric-title-in-color">Z-extra</b> sẽ giúp bạn</h4>
+            <h4 class="metric-title-in-bottom fade-all">Knowledge</h4>
+            <p class="metric-title-in-bottom-text container-content fade-all">
                 Các lớp học bổ trợ kiến thức văn hoá và ngôn ngữ - điều kiện nền 
                 tảng để phát triển tư duy tiếng Anh. Học viên sẽ được giảng dạy, 
                 thực hành giao tiếp và trực tiếp sửa sai bởi giáo viên IELTS 8.0+ bởi giáo viên bản xứ
             </p>
             <!-- <img class="metric-image" src="./assets/images/Knowledge.png" alt="" srcset=""> -->
-            <div class="metric-image-container">
+            <div class="metric-image-container fade-all">
                 <img src="./assets/images/young-woman-mb.png" alt="">
                 <div class="metric-top-content">
-                    <div class="metric-top-content-btn-left animated animatedFadeInUp fadeInUp">
+                    <div class="metric-top-content-btn-left">
                         <img src="./assets/images/icon-content-cmt-mb.png" alt="">
                         <p class="metric-top-content-btn-left-ex">
                             Chủ động thực hành giúp tiếp thu nhanh chóng
                         </p>
                     </div>
-                    <div class="metric-top-content-btn-right animated animatedFadeInUp fadeInUp">
+                    <div class="metric-top-content-btn-right">
                         <img src="./assets/images/icon-content-book-mb.png" alt="">
                         <p class="metric-top-content-btn-right-ex">
                             Học ngữ pháp bằng giao tiếp
@@ -1495,13 +1584,13 @@
                     </div>
                 </div>
                 <div class="metric-center-content">
-                    <div class="metric-center-content-btn-left animated animatedFadeInUp fadeInUp">
+                    <div class="metric-center-content-btn-left">
                         <img src="./assets/images/icon-content-grad-mb.png" alt="">
                         <p class="metric-center-content-btn-left-ex">
                             Bổ sung kiến thức văn hoá ngôn ngữ để luyện tư duy trực tiếp bằng tiếng Anh
                         </p>
                     </div>
-                    <div class="metric-center-content-btn-right animated animatedFadeInUp fadeInUp">
+                    <div class="metric-center-content-btn-right">
                         <img src="./assets/images/icon-content-listen-mb.png" alt="">
                         <p class="metric-center-content-btn-right-ex">
                             Luyện phản xạ nghe nói bằng hội thoại thực tế
@@ -1509,7 +1598,7 @@
                     </div>
                 </div>
                 <div class="metric-bottom-content">
-                    <div class="metric-bottom-content-btn-right animated animatedFadeInUp fadeInUp">
+                    <div class="metric-bottom-content-btn-right">
                         <img src="./assets/images/icon-content-hello-mb.png" alt="">
                         <p class="metric-bottom-content-btn-right-ex">
                             Học từ vựng qua chủ đề gần gũi
@@ -1557,21 +1646,21 @@
             <div class="content-metric-skill">
                 <h4 class="content-metric-skill-title">Skills & Social Hour</h4>
                 <div class="content-metric-container-in-skill">
-                    <div class="content-metric-export-skill zoom">
+                    <div class="content-metric-export-skill fade-all zoom">
                         <div class="content-metric-export-top-skill">
                             <img src="./assets/images/icon-open-discussion.png" alt="" srcset="">
                             <h6>Open discussion</h6>
                             <p>Các buổi thảo luận về những chủ đề xoay quanh cuộc sống hàng ngày. Chủ động rèn luyện Speaking và Listening qua tình huống thực tế</p>
                         </div>
                     </div>
-                    <div class="content-metric-export-skill zoom">
+                    <div class="content-metric-export-skill fade-all zoom">
                         <div class="content-metric-export-top-skill">
                             <img src="./assets/images/icon-Presentation.png" alt="" srcset="">
                             <h6>Presentation</h6>
                             <p>Luyện tập kỹ năng thuyết trình trước đám đông và khả năng trình bày ý tưởng mạch lạc. Tạo nền tảng tư duy cho Speaking và Writing</p>
                         </div>
                     </div>
-                    <div class="content-metric-export-skill zoom">
+                    <div class="content-metric-export-skill fade-all zoom">
                         <div class="content-metric-export-top-skill">
                             <img src="./assets/images/icon-social-hour.png" alt="" srcset="">
                             <h6>Social Hour</h6>
@@ -1583,53 +1672,53 @@
         </div>
 
         <div id="Elementary" class="content-metric container center">
-            <h4>Elementary</h4>
+            <h4 class="fade-all">Elementary</h4>
             <div class="content-metric-container-in">
-                <div class="content-metric-export zoom">
+                <div class="content-metric-export fade-all zoom">
                     <div class="content-metric-export-top">
                         <img src="./assets/images/icon-hello.png" alt="" srcset="">
                         <p>Thiếu <b>vốn từ </b>thông dụng</p>
                     </div>
                 </div>
-                <div class="content-metric-export zoom">
+                <div class="content-metric-export fade-all zoom">
                     <div class="content-metric-export-top">
                         <img src="./assets/images/icon-ngu-phap.png" alt="" srcset="">
                         <p>Không có nền tảng <b>ngữ pháp</b></p>
                     </div>
                 </div>
-                <div class="content-metric-export zoom">
+                <div class="content-metric-export fade-all zoom">
                     <div class="content-metric-export-top">
                         <img src="./assets/images/icon-listen-en.png" alt="" srcset="">
                         <p>Kỹ năng <b>nghe hiểu</b> yếu</p>
                     </div>
                 </div>
-                <div class="content-metric-export zoom">
+                <div class="content-metric-export fade-all zoom">
                     <div class="content-metric-export-top">
                         <img src="./assets/images/icon-kienthuc.png" alt="" srcset="">
                         <p>Khó tiếp thu <b>kiến thức</b></p>
                     </div>
                 </div>
-                <div class="content-metric-export zoom">
+                <div class="content-metric-export fade-all zoom">
                     <div class="content-metric-export-top">
                         <img src="./assets/images/icon-dien-dat-suy-nghi.png" alt="" srcset="">
                         <p>Hoàn toàn không thể <b>diễn đạt suy nghĩ</b></p>
                     </div>
                 </div>
             </div>
-            <h4 class="metric-title-in">Các lớp bổ trợ Z-extra sẽ giúp bạn</h4>
-            <h4 class="metric-title-in-bottom">Knowledge</h4>
-            <p class="metric-title-in-bottom-text container-content">Các lớp học bổ trợ kiến thức văn hoá và ngôn ngữ - điều kiện nền tảng để phát triển tư duy tiếng Anh. Học viên sẽ được giảng dạy, thực hành giao tiếp và trực tiếp sửa sai bởi giáo viên IELTS 8.0+ bởi giáo viên bản xứ</p>
+            <h4 class="metric-title-in fade-all">Các lớp bổ trợ <b class="metric-title-in-color">Z-extra</b> sẽ giúp bạn</h4>
+            <h4 class="metric-title-in-bottom fade-all">Knowledge</h4>
+            <p class="metric-title-in-bottom-text container-content fade-all">Các lớp học bổ trợ kiến thức văn hoá và ngôn ngữ - điều kiện nền tảng để phát triển tư duy tiếng Anh. Học viên sẽ được giảng dạy, thực hành giao tiếp và trực tiếp sửa sai bởi giáo viên IELTS 8.0+ bởi giáo viên bản xứ</p>
             <!-- <img class="metric-image" src="./assets/images/Knowledge.png" alt="" srcset=""> -->
-            <div class="metric-image-container">
+            <div class="metric-image-container fade-all">
                 <img src="./assets/images/young-woman-mb.png" alt="">
                 <div class="metric-top-content">
-                    <div class="metric-top-content-btn-left animated animatedFadeInUp fadeInUp">
+                    <div class="metric-top-content-btn-left">
                         <img src="./assets/images/icon-content-cmt-mb.png" alt="">
                         <p class="metric-top-content-btn-left-ex">
                             Chủ động thực hành giúp tiếp thu nhanh chóng
                         </p>
                     </div>
-                    <div class="metric-top-content-btn-right animated animatedFadeInUp fadeInUp">
+                    <div class="metric-top-content-btn-right">
                         <img src="./assets/images/icon-content-book-mb.png" alt="">
                         <p class="metric-top-content-btn-right-ex">
                             Học ngữ pháp bằng giao tiếp
@@ -1637,13 +1726,13 @@
                     </div>
                 </div>
                 <div class="metric-center-content">
-                    <div class="metric-center-content-btn-left animated animatedFadeInUp fadeInUp">
+                    <div class="metric-center-content-btn-left">
                         <img src="./assets/images/icon-content-grad-mb.png" alt="">
                         <p class="metric-center-content-btn-left-ex">
                             Bổ sung kiến thức văn hoá ngôn ngữ để luyện tư duy trực tiếp bằng tiếng Anh
                         </p>
                     </div>
-                    <div class="metric-center-content-btn-right animated animatedFadeInUp fadeInUp">
+                    <div class="metric-center-content-btn-right">
                         <img src="./assets/images/icon-content-listen-mb.png" alt="">
                         <p class="metric-center-content-btn-right-ex">
                             Luyện phản xạ nghe nói bằng hội thoại thực tế
@@ -1651,7 +1740,7 @@
                     </div>
                 </div>
                 <div class="metric-bottom-content">
-                    <div class="metric-bottom-content-btn-right animated animatedFadeInUp fadeInUp">
+                    <div class="metric-bottom-content-btn-right">
                         <img src="./assets/images/icon-content-hello-mb.png" alt="">
                         <p class="metric-bottom-content-btn-right-ex">
                             Học từ vựng qua chủ đề gần gũi
@@ -1699,21 +1788,21 @@
             <div class="content-metric-skill">
                 <h4>Skills & Social Hour</h4>
                 <div class="content-metric-container-in-skill">
-                    <div class="content-metric-export-skill zoom">
+                    <div class="content-metric-export-skill fade-all zoom">
                         <div class="content-metric-export-top-skill">
                             <img src="./assets/images/icon-open-discussion.png" alt="" srcset="">
                             <h6>Open discussion</h6>
                             <p>Các buổi thảo luận về những chủ đề xoay quanh cuộc sống hàng ngày. Chủ động rèn luyện Speaking và Listening qua tình huống thực tế</p>
                         </div>
                     </div>
-                    <div class="content-metric-export-skill zoom">
+                    <div class="content-metric-export-skill fade-all zoom">
                         <div class="content-metric-export-top-skill">
                             <img src="./assets/images/icon-Presentation.png" alt="" srcset="">
                             <h6>Presentation</h6>
                             <p>Luyện tập kỹ năng thuyết trình trước đám đông và khả năng trình bày ý tưởng mạch lạc. Tạo nền tảng tư duy cho Speaking và Writing</p>
                         </div>
                     </div>
-                    <div class="content-metric-export-skill zoom">
+                    <div class="content-metric-export-skill fade-all zoom">
                         <div class="content-metric-export-top-skill">
                             <img src="./assets/images/icon-social-hour.png" alt="" srcset="">
                             <h6>Social Hour</h6>
@@ -1725,53 +1814,53 @@
         </div>
 
         <div id="Intermediate" class="content-metric container center">
-            <h4>Intermediate</h4>
+            <h4 class="fade-all">Intermediate</h4>
             <div class="content-metric-container-in">
-                <div class="content-metric-export zoom">
+                <div class="content-metric-export fade-all zoom">
                     <div class="content-metric-export-top">
                         <img src="./assets/images/icon-hello.png" alt="" srcset="">
                         <p>Thiếu <b>vốn từ </b>thông dụng</p>
                     </div>
                 </div>
-                <div class="content-metric-export zoom">
+                <div class="content-metric-export fade-all zoom">
                     <div class="content-metric-export-top">
                         <img src="./assets/images/icon-ngu-phap.png" alt="" srcset="">
                         <p>Không có nền tảng <b>ngữ pháp</b></p>
                     </div>
                 </div>
-                <div class="content-metric-export zoom">
+                <div class="content-metric-export fade-all zoom">
                     <div class="content-metric-export-top">
                         <img src="./assets/images/icon-listen-en.png" alt="" srcset="">
                         <p>Kỹ năng <b>nghe hiểu</b> yếu</p>
                     </div>
                 </div>
-                <div class="content-metric-export zoom">
+                <div class="content-metric-export fade-all zoom">
                     <div class="content-metric-export-top">
                         <img src="./assets/images/icon-kienthuc.png" alt="" srcset="">
                         <p>Khó tiếp thu <b>kiến thức</b></p>
                     </div>
                 </div>
-                <div class="content-metric-export zoom">
+                <div class="content-metric-export fade-all zoom">
                     <div class="content-metric-export-top">
                         <img src="./assets/images/icon-dien-dat-suy-nghi.png" alt="" srcset="">
                         <p>Hoàn toàn không thể <b>diễn đạt suy nghĩ</b></p>
                     </div>
                 </div>
             </div>
-            <h4 class="metric-title-in">Các lớp bổ trợ Z-extra sẽ giúp bạn</h4>
-            <h4 class="metric-title-in-bottom">Knowledge</h4>
-            <p class="metric-title-in-bottom-text container-content">Các lớp học bổ trợ kiến thức văn hoá và ngôn ngữ - điều kiện nền tảng để phát triển tư duy tiếng Anh. Học viên sẽ được giảng dạy, thực hành giao tiếp và trực tiếp sửa sai bởi giáo viên IELTS 8.0+ bởi giáo viên bản xứ</p>
+            <h4 class="metric-title-in fade-all">Các lớp bổ trợ <b class="metric-title-in-color">Z-extra</b> sẽ giúp bạn</h4>
+            <h4 class="metric-title-in-bottom fade-all">Knowledge</h4>
+            <p class="metric-title-in-bottom-text container-content fade-all">Các lớp học bổ trợ kiến thức văn hoá và ngôn ngữ - điều kiện nền tảng để phát triển tư duy tiếng Anh. Học viên sẽ được giảng dạy, thực hành giao tiếp và trực tiếp sửa sai bởi giáo viên IELTS 8.0+ bởi giáo viên bản xứ</p>
             <!-- <img class="metric-image" src="./assets/images/Knowledge.png" alt="" srcset=""> -->
-            <div class="metric-image-container">
+            <div class="metric-image-container fade-all">
                 <img src="./assets/images/young-woman-mb.png" alt="">
                 <div class="metric-top-content">
-                    <div class="metric-top-content-btn-left animated animatedFadeInUp fadeInUp">
+                    <div class="metric-top-content-btn-left">
                         <img src="./assets/images/icon-content-cmt-mb.png" alt="">
                         <p class="metric-top-content-btn-left-ex">
                             Chủ động thực hành giúp tiếp thu nhanh chóng
                         </p>
                     </div>
-                    <div class="metric-top-content-btn-right animated animatedFadeInUp fadeInUp">
+                    <div class="metric-top-content-btn-right">
                         <img src="./assets/images/icon-content-book-mb.png" alt="">
                         <p class="metric-top-content-btn-right-ex">
                             Học ngữ pháp bằng giao tiếp
@@ -1779,13 +1868,13 @@
                     </div>
                 </div>
                 <div class="metric-center-content">
-                    <div class="metric-center-content-btn-left animated animatedFadeInUp fadeInUp">
+                    <div class="metric-center-content-btn-left">
                         <img src="./assets/images/icon-content-grad-mb.png" alt="">
                         <p class="metric-center-content-btn-left-ex">
                             Bổ sung kiến thức văn hoá ngôn ngữ để luyện tư duy trực tiếp bằng tiếng Anh
                         </p>
                     </div>
-                    <div class="metric-center-content-btn-right animated animatedFadeInUp fadeInUp">
+                    <div class="metric-center-content-btn-right">
                         <img src="./assets/images/icon-content-listen-mb.png" alt="">
                         <p class="metric-center-content-btn-right-ex">
                             Luyện phản xạ nghe nói bằng hội thoại thực tế
@@ -1793,7 +1882,7 @@
                     </div>
                 </div>
                 <div class="metric-bottom-content">
-                    <div class="metric-bottom-content-btn-right animated animatedFadeInUp fadeInUp">
+                    <div class="metric-bottom-content-btn-right">
                         <img src="./assets/images/icon-content-hello-mb.png" alt="">
                         <p class="metric-bottom-content-btn-right-ex">
                             Học từ vựng qua chủ đề gần gũi
@@ -1841,21 +1930,21 @@
             <div class="content-metric-skill">
                 <h4>Skills & Social Hour</h4>
                 <div class="content-metric-container-in-skill">
-                    <div class="content-metric-export-skill zoom">
+                    <div class="content-metric-export-skill fade-all zoom">
                         <div class="content-metric-export-top-skill">
                             <img src="./assets/images/icon-open-discussion.png" alt="" srcset="">
                             <h6>Open discussion</h6>
                             <p>Các buổi thảo luận về những chủ đề xoay quanh cuộc sống hàng ngày. Chủ động rèn luyện Speaking và Listening qua tình huống thực tế</p>
                         </div>
                     </div>
-                    <div class="content-metric-export-skill zoom">
+                    <div class="content-metric-export-skill fade-all zoom">
                         <div class="content-metric-export-top-skill">
                             <img src="./assets/images/icon-Presentation.png" alt="" srcset="">
                             <h6>Presentation</h6>
                             <p>Luyện tập kỹ năng thuyết trình trước đám đông và khả năng trình bày ý tưởng mạch lạc. Tạo nền tảng tư duy cho Speaking và Writing</p>
                         </div>
                     </div>
-                    <div class="content-metric-export-skill zoom">
+                    <div class="content-metric-export-skill fade-all zoom">
                         <div class="content-metric-export-top-skill">
                             <img src="./assets/images/icon-social-hour.png" alt="" srcset="">
                             <h6>Social Hour</h6>
@@ -1868,9 +1957,9 @@
     </section>
     <section class="course">
            <div class="course-title">
-               <h3>Khoá học <span>tại Zest </span></h3>
+               <h3 class="fade-all fade-in-right">Khoá học <span>tại Zest </span></h3>
            </div>
-           <div class="header-top-metric-btn-mb container">
+           <div class="header-top-metric-btn-mb container fade-all">
                 <div class="btn-metric-course tab-active-course" onclick="openTabCourse(event, 'zfi')">
                     <div class="btn-metric-course-active">
                         Zest for IELTS
@@ -1892,7 +1981,7 @@
                     </div>
                 </div>
             </div>
-            <div id="zfi" class="course-content tab-active-course container">
+            <div id="zfi" class="course-content tab-active-course container fade-all">
                   <div class="course-content-left">
                     <img src="./assets/images/couser-image-left.png" alt="" srcset="">
                   </div>
@@ -1922,7 +2011,7 @@
                   </div>
             </div>
 
-            <div id="zfb" class="course-content container">
+            <div id="zfb" class="course-content container fade-all">
                 <div class="course-content-left">
                   <img src="./assets/images/couser-image-left.png" alt="" srcset="">
                 </div>
@@ -1952,7 +2041,7 @@
                 </div>
             </div>
 
-            <div id="zfc" class="course-content container">
+            <div id="zfc" class="course-content container fade-all">
                 <div class="course-content-left">
                   <img src="./assets/images/couser-image-left.png" alt="" srcset="">
                 </div>
@@ -1982,7 +2071,7 @@
                 </div>
             </div>
 
-            <div id="zfd" class="course-content container">
+            <div id="zfd" class="course-content container fade-all">
                 <div class="course-content-left">
                   <img src="./assets/images/couser-image-left.png" alt="" srcset="">
                 </div>
@@ -2014,10 +2103,10 @@
     </section>
     <section class="teacher container">
         <div class="teacher-title container">
-            <h3>Đội ngũ <span>Giáo viên chất lượng</span></h3>
+            <h3 class="fade-all">Đội ngũ <span>Giáo viên chất lượng</span></h3>
         </div>
         <div class="teacher-row container">
-            <div class="teacher-row-content">
+            <div class="teacher-row-content fade-all">
                 <div style="overflow: hidden;" class="image-thumbnail-container">
                     <img class="image-thumbnail" src="./assets/images/teacher.png" alt="">
                 </div>
@@ -2039,7 +2128,7 @@
                     <p>Thạc sĩ BOSTOL, Mỹ</p>
                 </div>
             </div>
-            <div class="teacher-row-content">
+            <div class="teacher-row-content fade-all">
                 <div style="overflow: hidden;" class="image-thumbnail-container">
                     <img class="image-thumbnail" src="./assets/images/teacher.png" alt="">
                 </div>
@@ -2061,7 +2150,7 @@
                     <p>Thạc sĩ BOSTOL, Mỹ</p>
                 </div>
             </div>
-            <div class="teacher-row-content">
+            <div class="teacher-row-content fade-all">
                 <div style="overflow: hidden;" class="image-thumbnail-container">
                     <img class="image-thumbnail" src="./assets/images/teacher.png" alt="">
                 </div>
@@ -2084,7 +2173,7 @@
                 </div>
             </div>
 
-            <div class="teacher-row-content">
+            <div class="teacher-row-content fade-all">
                 <div style="overflow: hidden;" class="image-thumbnail-container">
                     <img class="image-thumbnail" src="./assets/images/teacher.png" alt="">
                 </div>
@@ -2137,6 +2226,71 @@
 //     }
 //   }, duration);
 // });
+
+// end xu lý srcoll
+document.addEventListener("DOMContentLoaded", function () {
+    let contentMetricExports = document.querySelectorAll(".content-metric-export");
+
+    contentMetricExports.forEach((contentMetricExport) => {
+        contentMetricExport.addEventListener("mouseover", function () {
+            // Xóa các class không mong muốn khi hover vào
+            contentMetricExport.classList.remove("fade-all", "fade-in-up", "fade-in-right");
+             // Khi hover, đặt opacity thành 1
+             contentMetricExport.style.opacity = 1;
+        });
+
+        contentMetricExport.addEventListener("mouseout", function () {
+            // Thêm lại các class khi không hover
+            contentMetricExport.classList.add("fade-all", "fade-in-up", "fade-in-right");
+            // Khi rời khỏi, đặt lại opacity về 1
+            // contentMetricExport.style.opacity = 1;
+        });
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    let contentMetricExportSkill = document.querySelectorAll(".content-metric-export-skill");
+
+    contentMetricExportSkill.forEach((contentMetricExportSkill) => {
+        contentMetricExportSkill.addEventListener("mouseover", function () {
+            // Xóa các class không mong muốn khi hover vào
+            contentMetricExportSkill.classList.remove("fade-all", "fade-in-up", "fade-in-right");
+             // Khi hover, đặt opacity thành 1
+             contentMetricExportSkill.style.opacity = 1;
+        });
+
+        contentMetricExportSkill.addEventListener("mouseout", function () {
+            // Thêm lại các class khi không hover
+            contentMetricExportSkill.classList.add("fade-all", "fade-in-up", "fade-in-right");
+            // Khi rời khỏi, đặt lại opacity về 1
+            // contentMetricExportSkill.style.opacity = 1;
+        });
+    });
+});
+
+
+document.addEventListener("DOMContentLoaded", function () {
+      var testDivs = document.querySelectorAll(".fade-all");
+
+      function handleScroll() {
+        testDivs.forEach(function (testDiv) {
+          var rect = testDiv.getBoundingClientRect();
+          var isInViewport = rect.top <= window.innerHeight && rect.bottom >= 0;
+
+          if (isInViewport) {
+            testDiv.classList.add("fade-in-up", "fade-in-right");
+          } else {
+            testDiv.classList.remove("fade-in-up", "fade-in-right");
+          }
+        });
+      }
+
+      window.addEventListener("scroll", handleScroll);
+
+      handleScroll();
+});
+// end xu lý srcoll
+
 
 document.addEventListener('DOMContentLoaded', function () {
 
