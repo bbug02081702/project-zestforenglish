@@ -31,6 +31,11 @@
         background-color: var(--bg-threeday);
         font-family: 'Inter', sans-serif;
     }
+    .fade-const{
+        opacity: 1 !important;
+        transform: translateX(0px) !important;
+        transform: translateY(0px) !important;
+    }
 
 /* header-banner */
     .header-banner{
@@ -317,7 +322,7 @@
         margin: 0 auto;
         gap: 32px;
         padding: 48px;
-        background-color: var(--bg-primary);
+        background-color: #0320AF;
         display: flex;
         max-width: 1140px;
         justify-content: flex-start;
@@ -338,12 +343,19 @@
     .header-banner-bottom{
         display: flex;
         gap: 4px;
+        /* align-items: baseline; */
     }
-    .header-banner-bottom-bg .text-counter{
-        font-weight: var(--fw-700);
-        font-size: 36px;
+
+    .icon-counter img {
+        align-items: baseline;
+        display: block;
+        max-width: 100%;
+        height: auto;
     }
-    .header-banner-bottom-bg .text-counter-after{
+   
+
+    .header-banner-bottom-bg .text-counter,
+    .header-banner-bottom-bg .text-counter-after {
         font-weight: var(--fw-700);
         font-size: 36px;
     }
@@ -360,6 +372,16 @@
       transition-delay: 0.3s;
       opacity: 1;
       transform: translateY(0); /* Di chuyển về vị trí ban đầu (không di chuyển) */
+    }
+    .header-banner-bottom .text-counter,
+    .header-banner-bottom .text-counter-after,
+    .header-banner-bottom .icon-counter{
+        transition: transform 0.3s ease-in-out;
+        will-change: transform;
+        display: flex;
+        line-height: 45px;
+        vertical-align: middle;
+        align-items: baseline;
     }
 
 /* end header-banner */
@@ -545,7 +567,7 @@
     }
       /* hieu ung */
       .zoom:hover {
-        cursor: pointer;
+        cursor: zoom-in;
         -ms-transform: scale(1.10); /* IE 9 */
         -webkit-transform: scale(1.10); /* Safari 3-8 */
         transform: scale(1.10); 
@@ -557,7 +579,7 @@
 } */
     /*end hieu ung zoom */
     .content-metric-export.fade-in-right {
-      transition-delay: 0.5s;
+      /* transition-delay: 0.5s; */
       opacity: 1;
       transform: translateX(0); /* Di chuyển về vị trí ban đầu (không di chuyển) */
     }
@@ -868,7 +890,7 @@
         transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
     }
     .content-metric-export-skill.fade-in-right {
-      transition-delay: 0.5s;
+      /* transition-delay: 0.5s; */
       opacity: 1;
       transform: translateX(0); /* Di chuyển về vị trí ban đầu (không di chuyển) */
     }
@@ -1146,6 +1168,133 @@
         color: var(--bg-seconday);
     }
 /* end teacher */
+
+/* calendar */
+    .container-calendar{
+       width: 100%;
+       min-height: 647px;
+       padding: 48px 0px;
+       background-color: #fff;
+    }
+    .container-calendar .wrapper-calendar .calendar-title{
+        text-align: center;
+        font-size: 36px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 45px;
+    }
+    .container-calendar .wrapper-calendar .calendar-highlight{
+        color:#052FFF;
+    }
+    .container-calendar .wrapper-calendar .calendar-header-top{
+        margin-top: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .container-calendar .wrapper-calendar .calendar-header-top .calendar-header-top-left{
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 28px;
+    }
+    .container-calendar .wrapper-calendar .calendar-header-top .calendar-header-top-right{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 24px;
+        color: #374151;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 19.6px;
+    }
+    .container-calendar .wrapper-calendar .calendar-header-top .calendar-header-top-right .calendar-top-content{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+    }
+    .container-calendar .wrapper-calendar .calendar-header-top .calendar-header-top-right .calendar-icon-one{
+        width: 22px;
+        height: 22px;
+        background-color: #052FFF;
+        border-radius: 4px;
+    }
+    .container-calendar .wrapper-calendar .calendar-header-top .calendar-header-top-right .calendar-icon-two{
+        width: 22px;
+        height: 22px;
+        background-color: #FEC200;
+        border-radius: 4px;
+    }
+    .container-calendar .wrapper-calendar .calendar-header-top .calendar-header-top-right .calendar-icon-three{
+        width: 22px;
+        height: 22px;
+        background-color: #16A34A;
+        border-radius: 4px;
+    }
+    .calendar-content {
+        margin-top: 16px;
+        display: flex;
+    }
+    .calendar-content .calendar-content-export{
+       display: flex;
+       flex-direction: column;
+       padding: 8px;
+       width: 162.85715px;
+       height: 64px;
+       background-color: #F9FAFB;
+       border: 1px solid #E5E7EB;
+       border-bottom: 0px;
+    }
+    .calendar-content .calendar-content-export .calendar-content-export-rank{
+        color: #111827;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 19.6px;
+    }
+    .calendar-content .calendar-content-export  .calendar-content-export-number{
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 28px;
+        color: #111827;
+    }
+    .calendar-content-detail{
+       display: flex;
+       flex-direction: column;
+       gap: 8px;
+       padding: 8px;
+       width: 162.85715px;
+       height: 122px;
+       background-color: #FFF;
+       border: 1px solid #E5E7EB;
+    }
+    .calendar-content-detail-times{
+        text-align: center;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 18px; 
+        width: 50px;
+        height: auto;
+        border-radius: 4px;
+        background-color: #9CA3AF;
+    }
+    .calendar-content-detail-title{
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 19.6px;
+    }
+    .calendar-content-detail-export{
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 19.6px;
+    }
+/* end calendar */
 
 /* reponsive for mobile */
     @media screen and (max-width: 768px) {
@@ -2236,6 +2385,340 @@
                 </a>
             </div>
     </section>
+    <section class="container-calendar">
+        <div class="wrapper-calendar container">
+             <h2 class="calendar-title">Các lớp<b class="calendar-highlight"> Z-extra sắp diễn ra</b></h2>
+             <div class="calendar-header-top">
+                <div class="calendar-header-top-left">
+                    Tuần từ 17/08 -> 23/08
+                </div>
+                <div class="calendar-header-top-right">
+                    <div class="calendar-top-content">
+                        <div class="calendar-icon-one"></div>
+                        Lớp Knowledge
+                    </div>
+                    <div class="calendar-top-content">
+                        <div class="calendar-icon-two"></div>
+                        Lớp Soft Skills
+                    </div>
+                    <div class="calendar-top-content">
+                        <div class="calendar-icon-three"></div>
+                        Lớp Social Hour
+                    </div>
+                </div>
+             </div>
+            
+             <div class="calendar-content">
+                <div class="calendar-content-wrapper">
+                    <div class="calendar-content-export">
+                        <div class="calendar-content-export-rank">
+                            Thứ Hai
+                        </div>
+                        <div class="calendar-content-export-number">
+                           17
+                        </div>
+                    </div>
+                    <div class="calendar-content-detail">
+                        <div class="calendar-content-detail-times">
+                            13:00
+                        </div>
+                        <div class="calendar-content-detail-title">
+                            Elementary
+                        </div>
+                        <div class="calendar-content-detail-export">
+                            Câu chẻ - kỹ thuật bứt phá điểm ielts
+                        </div>
+                    </div>
+                    <div class="calendar-content-detail">
+                        <div class="calendar-content-detail-times">
+                            13:00
+                        </div>
+                        <div class="calendar-content-detail-title">
+                            Elementary
+                        </div>
+                        <div class="calendar-content-detail-export">
+                            Câu chẻ - kỹ thuật bứt phá điểm ielts
+                        </div>
+                    </div>
+                    <div class="calendar-content-detail">
+                        <div class="calendar-content-detail-times">
+                            13:00
+                        </div>
+                        <div class="calendar-content-detail-title">
+                            Elementary
+                        </div>
+                        <div class="calendar-content-detail-export">
+                            Câu chẻ - kỹ thuật bứt phá điểm ielts
+                        </div>
+                    </div>
+                </div>
+
+                <div class="calendar-content-wrapper">
+                    <div class="calendar-content-export">
+                        <div class="calendar-content-export-rank">
+                            Thứ Ba
+                        </div>
+                        <div class="calendar-content-export-number">
+                           18
+                        </div>
+                    </div>
+                    <div class="calendar-content-detail">
+                        <div class="calendar-content-detail-times">
+                            13:00
+                        </div>
+                        <div class="calendar-content-detail-title">
+                            Elementary
+                        </div>
+                        <div class="calendar-content-detail-export">
+                            Câu chẻ - kỹ thuật bứt phá điểm ielts
+                        </div>
+                    </div>
+                    <div class="calendar-content-detail">
+                        <div class="calendar-content-detail-times">
+                            13:00
+                        </div>
+                        <div class="calendar-content-detail-title">
+                            Elementary
+                        </div>
+                        <div class="calendar-content-detail-export">
+                            Câu chẻ - kỹ thuật bứt phá điểm ielts
+                        </div>
+                    </div>
+                    <div class="calendar-content-detail">
+                        <div class="calendar-content-detail-times">
+                            13:00
+                        </div>
+                        <div class="calendar-content-detail-title">
+                            Elementary
+                        </div>
+                        <div class="calendar-content-detail-export">
+                            Câu chẻ - kỹ thuật bứt phá điểm ielts
+                        </div>
+                    </div>
+                </div>
+
+                <div class="calendar-content-wrapper">
+                    <div class="calendar-content-export">
+                        <div class="calendar-content-export-rank">
+                            Thứ Tư
+                        </div>
+                        <div class="calendar-content-export-number">
+                           19
+                        </div>
+                    </div>
+                    <div class="calendar-content-detail">
+                        <div class="calendar-content-detail-times">
+                            13:00
+                        </div>
+                        <div class="calendar-content-detail-title">
+                            Elementary
+                        </div>
+                        <div class="calendar-content-detail-export">
+                            Câu chẻ - kỹ thuật bứt phá điểm ielts
+                        </div>
+                    </div>
+                    <div class="calendar-content-detail">
+                        <div class="calendar-content-detail-times">
+                            13:00
+                        </div>
+                        <div class="calendar-content-detail-title">
+                            Elementary
+                        </div>
+                        <div class="calendar-content-detail-export">
+                            Câu chẻ - kỹ thuật bứt phá điểm ielts
+                        </div>
+                    </div>
+                    <div class="calendar-content-detail">
+                        <div class="calendar-content-detail-times">
+                            13:00
+                        </div>
+                        <div class="calendar-content-detail-title">
+                            Elementary
+                        </div>
+                        <div class="calendar-content-detail-export">
+                            Câu chẻ - kỹ thuật bứt phá điểm ielts
+                        </div>
+                    </div>
+                </div>
+
+                <div class="calendar-content-wrapper">
+                    <div class="calendar-content-export">
+                        <div class="calendar-content-export-rank">
+                            Thứ Năm
+                        </div>
+                        <div class="calendar-content-export-number">
+                           20
+                        </div>
+                    </div>
+                    <div class="calendar-content-detail">
+                        <div class="calendar-content-detail-times">
+                            13:00
+                        </div>
+                        <div class="calendar-content-detail-title">
+                            Elementary
+                        </div>
+                        <div class="calendar-content-detail-export">
+                            Câu chẻ - kỹ thuật bứt phá điểm ielts
+                        </div>
+                    </div>
+                    <div class="calendar-content-detail">
+                        <div class="calendar-content-detail-times">
+                            13:00
+                        </div>
+                        <div class="calendar-content-detail-title">
+                            Elementary
+                        </div>
+                        <div class="calendar-content-detail-export">
+                            Câu chẻ - kỹ thuật bứt phá điểm ielts
+                        </div>
+                    </div>
+                    <div class="calendar-content-detail">
+                        <div class="calendar-content-detail-times">
+                            13:00
+                        </div>
+                        <div class="calendar-content-detail-title">
+                            Elementary
+                        </div>
+                        <div class="calendar-content-detail-export">
+                            Câu chẻ - kỹ thuật bứt phá điểm ielts
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="calendar-content-wrapper">
+                    <div class="calendar-content-export">
+                        <div class="calendar-content-export-rank">
+                            Thứ Sáu
+                        </div>
+                        <div class="calendar-content-export-number">
+                           21
+                        </div>
+                    </div>
+                    <div class="calendar-content-detail">
+                        <div class="calendar-content-detail-times">
+                            13:00
+                        </div>
+                        <div class="calendar-content-detail-title">
+                            Elementary
+                        </div>
+                        <div class="calendar-content-detail-export">
+                            Câu chẻ - kỹ thuật bứt phá điểm ielts
+                        </div>
+                    </div>
+                    <div class="calendar-content-detail">
+                        <div class="calendar-content-detail-times">
+                            13:00
+                        </div>
+                        <div class="calendar-content-detail-title">
+                            Elementary
+                        </div>
+                        <div class="calendar-content-detail-export">
+                            Câu chẻ - kỹ thuật bứt phá điểm ielts
+                        </div>
+                    </div>
+                    <div class="calendar-content-detail">
+                        <div class="calendar-content-detail-times">
+                            13:00
+                        </div>
+                        <div class="calendar-content-detail-title">
+                            Elementary
+                        </div>
+                        <div class="calendar-content-detail-export">
+                            Câu chẻ - kỹ thuật bứt phá điểm ielts
+                        </div>
+                    </div>
+                </div>
+
+                <div class="calendar-content-wrapper">
+                    <div class="calendar-content-export">
+                        <div class="calendar-content-export-rank">
+                            Thứ Bảy
+                        </div>
+                        <div class="calendar-content-export-number">
+                           22
+                        </div>
+                    </div>
+                    <div class="calendar-content-detail">
+                        <div class="calendar-content-detail-times">
+                            13:00
+                        </div>
+                        <div class="calendar-content-detail-title">
+                            Elementary
+                        </div>
+                        <div class="calendar-content-detail-export">
+                            Câu chẻ - kỹ thuật bứt phá điểm ielts
+                        </div>
+                    </div>
+                    <div class="calendar-content-detail">
+                        <div class="calendar-content-detail-times">
+                            13:00
+                        </div>
+                        <div class="calendar-content-detail-title">
+                            Elementary
+                        </div>
+                        <div class="calendar-content-detail-export">
+                            Câu chẻ - kỹ thuật bứt phá điểm ielts
+                        </div>
+                    </div>
+                    <div class="calendar-content-detail">
+                        <div class="calendar-content-detail-times">
+                            13:00
+                        </div>
+                        <div class="calendar-content-detail-title">
+                            Elementary
+                        </div>
+                        <div class="calendar-content-detail-export">
+                            Câu chẻ - kỹ thuật bứt phá điểm ielts
+                        </div>
+                    </div>
+                </div>
+
+                <div class="calendar-content-wrapper">
+                    <div class="calendar-content-export">
+                        <div class="calendar-content-export-rank">
+                            Chủ Nhật
+                        </div>
+                        <div class="calendar-content-export-number">
+                           23
+                        </div>
+                    </div>
+                    <div class="calendar-content-detail">
+                        <div class="calendar-content-detail-times">
+                            13:00
+                        </div>
+                        <div class="calendar-content-detail-title">
+                            Elementary
+                        </div>
+                        <div class="calendar-content-detail-export">
+                            Câu chẻ - kỹ thuật bứt phá điểm ielts
+                        </div>
+                    </div>
+                    <div class="calendar-content-detail">
+                        <div class="calendar-content-detail-times">
+                            13:00
+                        </div>
+                        <div class="calendar-content-detail-title">
+                            Elementary
+                        </div>
+                        <div class="calendar-content-detail-export">
+                            Câu chẻ - kỹ thuật bứt phá điểm ielts
+                        </div>
+                    </div>
+                    <div class="calendar-content-detail">
+                        <div class="calendar-content-detail-times">
+                            13:00
+                        </div>
+                        <div class="calendar-content-detail-title">
+                            Elementary
+                        </div>
+                        <div class="calendar-content-detail-export">
+                            Câu chẻ - kỹ thuật bứt phá điểm ielts
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 <script>
 //       var typing=new Typed(".header-banner-title h2", {
 //        strings: ["Tư Duy Ngôn Ngữ"],
@@ -2268,14 +2751,14 @@ document.addEventListener("DOMContentLoaded", function () {
     contentMetricExports.forEach((contentMetricExport) => {
         contentMetricExport.addEventListener("mouseover", function () {
             // Xóa các class không mong muốn khi hover vào
-            contentMetricExport.classList.remove("fade-all", "fade-in-up", "fade-in-right");
+            contentMetricExport.classList.remove("fade-all", "fade-in-up", "fade-in-right", "fade-const");
              // Khi hover, đặt opacity thành 1
              contentMetricExport.style.opacity = 1;
         });
 
         contentMetricExport.addEventListener("mouseout", function () {
             // Thêm lại các class khi không hover
-            contentMetricExport.classList.add("fade-all", "fade-in-up", "fade-in-right");
+            contentMetricExport.classList.add("fade-all", "fade-in-up", "fade-in-right", "fade-const");
             // Khi rời khỏi, đặt lại opacity về 1
             // contentMetricExport.style.opacity = 1;
         });
@@ -2288,14 +2771,14 @@ document.addEventListener("DOMContentLoaded", function () {
     contentMetricExportSkill.forEach((contentMetricExportSkill) => {
         contentMetricExportSkill.addEventListener("mouseover", function () {
             // Xóa các class không mong muốn khi hover vào
-            contentMetricExportSkill.classList.remove("fade-all", "fade-in-up", "fade-in-right");
+            contentMetricExportSkill.classList.remove("fade-all", "fade-in-up", "fade-in-right", "fade-const");
              // Khi hover, đặt opacity thành 1
              contentMetricExportSkill.style.opacity = 1;
         });
 
         contentMetricExportSkill.addEventListener("mouseout", function () {
             // Thêm lại các class khi không hover
-            contentMetricExportSkill.classList.add("fade-all", "fade-in-up", "fade-in-right");
+            contentMetricExportSkill.classList.add("fade-all", "fade-in-up", "fade-in-right", "fade-const");
             // Khi rời khỏi, đặt lại opacity về 1
             // contentMetricExportSkill.style.opacity = 1;
         });
@@ -2304,74 +2787,94 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 document.addEventListener("DOMContentLoaded", function () {
-      var testDivs = document.querySelectorAll(".fade-all");
+    var testDivs = document.querySelectorAll(".fade-all");
 
-      function handleScroll() {
+    function handleScroll() {
         testDivs.forEach(function (testDiv) {
-          var rect = testDiv.getBoundingClientRect();
-          var isInViewport = rect.top <= window.innerHeight && rect.bottom >= 0;
+            var rect = testDiv.getBoundingClientRect();
+            var isInViewport = rect.top <= window.innerHeight && rect.bottom >= 0;
 
-          if (isInViewport) {
-            testDiv.classList.add("fade-in-up", "fade-in-right");
-          } else {
-            testDiv.classList.remove("fade-in-up", "fade-in-right");
-          }
+            if (isInViewport) {
+                testDiv.classList.add("fade-in-up", "fade-in-right");
+
+                // kiem tra 0 pacity = 1 ? và them fade-const
+                if (getComputedStyle(testDiv).opacity === "1") {
+                    testDiv.classList.add("fade-const");
+                } else {
+                    testDiv.classList.remove("fade-const");
+                }
+            } else {
+                testDiv.classList.remove("fade-in-up", "fade-in-right");
+            }
         });
-      }
+    }
 
-      window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
-      handleScroll();
+    handleScroll();
 });
+
 // end xu lý srcoll
 
 
 document.addEventListener('DOMContentLoaded', function () {
+    var typing = new Typed(".header-banner-title h2", {
+        strings: ["Tư Duy Ngôn Ngữ"],
+        typeSpeed: 100,
+        backSpeed: 40,
+        loop: false,
+    });
 
-// Thêm hiệu ứng typing cho tiêu đề h2
-var typing = new Typed(".header-banner-title h2", {
-    strings: ["Tư Duy Ngôn Ngữ"],
-    typeSpeed: 100,
-    backSpeed: 40,
-    loop: false,
-});
+    let valueDisplays = document.querySelectorAll(".text-counter");
+    let interval = 1000;
 
-// Xử lý hiệu ứng đếm số khi cuộn đến phần tử
-let valueDisplays = document.querySelectorAll(".text-counter");
-let interval = 1000;
+    // Lưu trữ giá trị hiện tại để kiểm tra khi cần cập nhật
+    let currentValue = {};
 
-function checkVisibility() {
-    let bannerBottom = document.querySelector(".header-banner-container");
-    let rect = bannerBottom.getBoundingClientRect();
+    valueDisplays.forEach((valueDisplay) => {
+        valueDisplay.textContent = "00";
+        currentValue[valueDisplay.dataset.val] = 0;
+    });
 
-    // Nếu phần tử xuất hiện trong tầm nhìn, kích hoạt đếm số
-    if (rect.top <= window.innerHeight && rect.bottom >= 0) {
-        valueDisplays.forEach((valueDisplay) => {
-            if (!valueDisplay.dataset.counted) {
-                let startValue = 0;
-                let endValue = parseInt(valueDisplay.getAttribute("data-val"));
-                let duration = Math.floor(interval / endValue);
+    function checkVisibility() {
+        let bannerBottom = document.querySelector(".header-banner-container");
+        let rect = bannerBottom.getBoundingClientRect();
 
-                //setInterval để cập nhật giá trị đếm
-                let counter = setInterval(function () {
-                    startValue += 1;
-                    valueDisplay.textContent = startValue;
+        if (rect.top <= window.innerHeight && rect.bottom >= 0) {
+            valueDisplays.forEach((valueDisplay) => {
+                if (!valueDisplay.dataset.counted) {
+                    let endValue = parseInt(valueDisplay.getAttribute("data-val"));
 
-                    // Khi giá trị đếm đạt giá trị cuối cùng, dừng đếm
-                    if (startValue === endValue) {
-                        clearInterval(counter);
-                        valueDisplay.dataset.counted = "true"; // Đánh dấu đã đếm để tránh đếm lại
+                    if (currentValue[valueDisplay.dataset.val] < endValue) {
+                        let startValue = currentValue[valueDisplay.dataset.val];
+                        let duration = Math.floor(interval / endValue);
+
+                        //setInterval để cập nhật giá trị đếm
+                        let counter = setInterval(function () {
+                            startValue += 1;
+
+                            // Chỉ cập nhật giá trị khi có sự thay đổi
+                            if (currentValue[valueDisplay.dataset.val] !== startValue) {
+                                valueDisplay.textContent = startValue.toString().padStart(2, '0');
+                                currentValue[valueDisplay.dataset.val] = startValue;
+                            }
+
+                            // Khi giá trị đếm đạt giá trị cuối cùng, dừng đếm
+                            if (startValue === endValue) {
+                                clearInterval(counter);
+                                valueDisplay.dataset.counted = "true";
+                            }
+                        }, duration);
                     }
-                }, duration);
-            }
-        });
+                }
+            });
+        }
     }
-}
 
-// Gọi hàm kiểm tra khi cuộn hoặc khi trang tải
-window.addEventListener('scroll', checkVisibility);
-window.addEventListener('load', checkVisibility);
+    window.addEventListener('scroll', checkVisibility);
+    window.addEventListener('load', checkVisibility);
 });
+
 
 
    function openTab(evt, metricName) {
